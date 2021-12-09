@@ -59,7 +59,29 @@ def foo(a, b):
 ```
 ````
 `````
+````{admonition} Alogorithm compress
 
+```{code-block} python
+---
+emphasize-lines : 13
+linenos: true
+---
+def switch_xy(imgxy):
+    imgyx = []
+    coord_x = len(imgxy)
+    coord_y = len(imgxy[0])
+    
+    for i in range(coord_y):
+        imgyx.append([0]*coord_x)
+    
+    for x in range(coord_x):
+        for y in range(coord_y):
+            imgyx[y][x] = imgxy[x][y]
+    
+    return imgyx
+
+```
+````
 ## Insérer du code depuis un fichier externe
 
 Il est également possible d'inclure du code dans la documentation depuis un fichier externe, au lieu d'avoir à écrire copier le code directement dans le fichier `.md`.
