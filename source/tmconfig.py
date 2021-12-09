@@ -1,6 +1,6 @@
 class TMConfig:
 
-    title = u'Fonctionnement des algorithmes de compressions de données''
+    title = u"Fonctionnement des algorithmes de compressions de données"
     first_name = 'Romain'
     last_name = 'De Groote'
     author = f'{first_name} {last_name}'
