@@ -1,4 +1,4 @@
-# Titre du chapitre 2
+# La compression d'image
 
 ## Titre 1
 
