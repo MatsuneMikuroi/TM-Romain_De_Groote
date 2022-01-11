@@ -11,18 +11,14 @@ La compression de données
     :caption: Table des matières
 
     introduction.md
-    chapitre-01.md
-    chapitre-02.md
+    1_preface.md
+    2_images.md
+    3_textes.md
+    4_glossaire
+    5_bibliographie
+    6_src_img
+    7_remerciements.md
     todo.rst
-
-..  toctree::
-    :maxdepth: 2
-    :caption: Tutoriel Sphinx
-
-    tutoriel-sphinx/index.rst
-
-
-
 
 Indices and tables
 ==================
