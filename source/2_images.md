@@ -202,6 +202,7 @@ orig_imgx = len(img[0])
 comp_imgy = int(len(img)*ratio)
 comp_imgx = int(len(img[0])*ratio)
 pos_y = 0
+pos_x = 0
 ``` 
 :::{admonition} Conseil
 ---
@@ -209,6 +210,19 @@ class: tip
 ---
 Il est visible que x et y ont été inversées, en effet, là où avant c'était la coordonnée y qui accèdait aux sous-listes, c'est désormais la coordonnées x.
 :::
+Après on crée une liste vide N fois plus petite (N correspondrait au ratio de compression).
+```python
+img_compress = [[0]*comp_imgx]*comp_imgy
+```
+:::{admonition} Conseil
+---
+class: tip
+---
+En python, il existe plusieurs manières de faire une liste de listes de tailles données. Une première méthode consiste 
+:::
+
+
+
 
 
 ```python
