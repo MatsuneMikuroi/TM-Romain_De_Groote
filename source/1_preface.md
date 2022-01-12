@@ -1,8 +1,11 @@
-# À quoi sert la compression de données
-## Stockage de l'information
-En premier temps, il est nécessaire de comprendre comment l'ordinateur stocke les données qu'il reçoit.
+# Préface
+## Pourquoi ce travail ?
+## À quoi sert la compression de données ?
+### Stockage de l'information
+*En premier temps, il est nécessaire de comprendre comment l'ordinateur stocke les données qu'il reçoit.*
+
 En informatique, les informations sont représentés, dans leur forme la plus primaire, à partir de "0" et de "1". C'est ce que l'on appelle le langage binaire. Ces "0" et "1" correspondent à l'état dans lequel se trouve le transistor, "0" signifie qu'il est éteint et "1" qu'il est allumé. Ces transistors se trouvent dans différentes parties de l'ordinateur, permettant à ce dernier de savoir s'il doit les utiliser ou juste les stocker. Les données possèdent ainsi deux états: elles sont soit statiques soit volatiles. Les données statiques sont stockées dans les disques durs et dans la ROM. Les données volatiles sont stockées dans la RAM de l'ordinateur.
-### Néanmoins, comment cela se passe pour les données en ligne ?
+#### *Néanmoins, comment cela se passe pour les données en ligne ?*
 Pour qu'un site web fonctionne, il a besoin de deux choses :
 * Avoir une machine hébergeant le site.
 * Avoir une adresse IP permettant d'être retrouvé par le service DNS.
