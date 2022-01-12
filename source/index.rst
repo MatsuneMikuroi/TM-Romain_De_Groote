@@ -10,7 +10,7 @@ La compression de données
     :maxdepth: 2
     :caption: Table des matières
 
-    introduction.md
+    0_introduction.md
     1_preface.md
     2_images.md
     3_textes.md
