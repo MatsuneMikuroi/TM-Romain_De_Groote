@@ -11,7 +11,6 @@ De nos jours, tout a été numérisé. Or, contrairement à une photo prise par 
 Le point bleu minuscule sur l'écran est de 1px*1px. Cette image est surtout utile si le script est en version informatique.
 ```
  C’est donc à cause de cette façon d’afficher les images qu’il est impossible de demander à l’ordinateur d’afficher de cercle, néanmoins, il est possible de lui demander de créer un polygone ressemblant fortement à un cercle. Voici un exemple :
-
 ```{figure} imgs/circle/512x512.png
 ---
 class: with border
@@ -19,7 +18,6 @@ class: with border
 Représentation d'un cercle dans un carré de 512px*512px.
 ```
 Le cercle ci-dessus à un diamètre de 512 pixels, l'image ayant une haute résolution, la forme nous apparait comme un cercle. Qu'est-ce qu'il se passerait maintenant si la taille de  l'image était réduite ? Diminuons sa taille par un facteur 2.
-
 ```{figure} imgs/circle/256x256.png
 ---
 class: with border

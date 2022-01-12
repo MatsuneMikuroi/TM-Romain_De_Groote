@@ -107,6 +107,10 @@ Voici les étapes à suivre:
    pip install -r requirements.txt
    ```
 
+sudo apt update
+
+sudo apt-get install texlive-latex-extra texlive-lang-french texlive-fonts-recommended latexmk
+
 4. Vous pouvez ensuite générer le HTML avec
 
    ```bash
