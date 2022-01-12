@@ -166,8 +166,19 @@ class: with border
 
 Première compression avec la nouvelle règle. (16px*16px)
 ```
-Ce changement, bien qu'infime, vient pratiquement de faire disparaître l'image en sa totalité.
+Ce changement, bien qu'infime, vient pratiquement de faire disparaître l'image en sa totalité. Cela est du fait que la majorité des pixels noirs sur la première image provenaient de groupe de pixels souvent à la limite du critère d'acceptabilité de la règle.
+```{figure} imgs/mountains/32x32_gride.png
+---
+class: with border
+---
+Avec la vue que nous permet le cadrillage, il devient assez vite compréhensible de ces raisons.
+```
+#### Exercice 1: le paysage.
+Vers le milieu des années nonante, Jean est photographe proffesionnel et réalise des commandes que des entreprises lui demande. Sa spécificité ? Ses photos font 32px*32 et ne sont qu'en noir et blanc, sans nuance de gris. Son ordinateur récemment acheter n'a plus le même algorithme de compression par défaut. Jean était habitué à la règle 1, c'est désormais la seconde qui s'applique.
 
+Un 
+
+Néanmoins, on pourait imaginer un cas bien précis où l'ordinateur appliquerait la règle 2 par défaut (sans que le photographe ne puisse la changer) et que son client, pas trop pointilleux, est surtout intéressé par les montagnes.
 
  Et c'est là l'un des défis de la compression de données: développer des algorithmes qui vont comprimer les images de manières à ce qu'elles prennent le moins de place possible tout en gardant un maximum d'éléments essentiels. Et ce qui est entendu par éléments essentiels change en fonction du contexte. Un fond d'écran va demander une image avec une très haute résolution et donc assez lourde, alors qu'un memes partager sur les réseaux sociaux aura tendance à avoir une résolution plus faible car plus l'image est légère, moins elle prendra de temps à charger et d'espace dans les serveurs de l'entreprise derrière.
 
