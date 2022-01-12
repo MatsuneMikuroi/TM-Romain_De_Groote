@@ -3,12 +3,8 @@ L'objectif de ce chapitre va-t-être d'enseigner le principe de la compression d
 ## Théorie
 ### Représentation des images
 Avant de commencer de s'attquer à la compression pure, il est bon de comprendre la manière dont l'ordinateur représente des images.
-```{admonition} Début du cours
----
-class: attention
----
-C'est ici que commence réellement le cours.
-```
+
+
 De nos jours, tout a été numérisé. Or, contrairement à une photo prise par un appareil polaroid, qui reproduit exactement la réalité, l’ordinateur est limité dans sa représentation des images. Il ne peut par exemple par dessiner de cercle. Cela est dû au fait que pour afficher quelque chose, l’ordinateur allume des minuscules leds. Il est d’ailleurs possible, suivant votre niveau de vue, de les distinguer si vous êtes sur ordinateur. Sinon, voici une image dont les carrés sont de respectivement 64, 32, 16, 8, 4, 2 et 1 pixels.
 
 ```{figure} imgs/pixel.png
@@ -118,7 +114,7 @@ L'image originale est majoritairement blanche, le noir ne fait que dessiner la f
 ---
 class: attention
 ---
-Pour comprendre comment fonctionne les algorithmes suivants, il faut déjà avoir quelques connaissances sur le fonctionnement et les manipulations des listes en python.
+Pour comprendre comment fonctionne les algorithmes suivants, il est préférable de déjà avoir quelques connaissances sur le fonctionnement et les manipulations des listes en python.
 :::
 ### Inversion des coordonnées
 Pour la compression d’images, il a fallu commencer par une restructuration des listes. En effet, dans le langage courant nous lisons les informations de gauche à droite et de haut en bas, or, lorsque nous soutirons une image sous forme de liste de listes de pixels, l’ordinateur nous renvoi une liste qui se lit de haut en bas et de gauche à droite.
@@ -130,7 +126,7 @@ Pour la compression d’images, il a fallu commencer par une restructuration des
 
  Le premier algorithme à développer devait donc inverser les coordonnées x y des images.
  
-En premier temps, on définit une fonction ayant en paramètre une list et qui renvoi une list.
+En premier temps, on définit une fonction ayant en paramètre une *list* et qui renvoi une *list*.
 ```python
 def switch_xy(imgxy:list)->list:
 ```
@@ -151,12 +147,12 @@ class: tip
 Ces deux variables éviteront des erreurs entre les coordonnées. Concernant la deuxième, le fait de regarder la longueur de la première sous-liste permet de la définir car toutes les sous-listes ont le même nombre d'éléments, une image étant forcément rectangulaire.
 :::
 
-Ensuite on vient créer une image de même dimension mais entièrement blanche avec la boucle "for" suivante:
+Ensuite on vient créer une image de même dimension mais entièrement blanche avec la boucle *for* suivante:
 ```python
 for i in range(coord_y):
     imgyx.append([0]*coord_x)
 ```
-Après, il ne reste plus qu'à parcourir chaque valeur de chaque sous-liste et les attribuer à leur nouvelle position, ce que l'on peut faire avec une double boucle "for":
+Après, il ne reste plus qu'à parcourir chaque valeur de chaque sous-liste et les attribuer à leur nouvelle position, ce que l'on peut faire avec une double boucle *for*:
 ```python
 for x in range(coord_x):
     for y in range(coord_y):
@@ -191,11 +187,11 @@ Le défi suivant a été de développé un algorithme de compression d'images. J
     Si en couleur:
         -> arondi à l'entier la moyenne des valeurs RGB des pixels
 
-Pour cela il a fallut définir une fonction ayant comme paramètre une list, un ratio de compression sous forme de float et un format sous forme de string. Le tout retournant une list.
+Pour cela il a fallut définir une fonction ayant comme paramètre une *list*, un ratio de compression sous forme de *float* et un format sous forme de *string*. Le tout retournant une *list*.
 ```python
 def compres(img:list, ratio:float, _format:str) -> list:
 ```
-Ensuite, vient l'initialisation des variables. Les deux premières viennent récupérer les dimensions de l'image originale. Les deux suivantes viennent déterminer celles de l'image compressée. Enfin, les deux dernière viennent indiquer quel pixel de l'image comprimée va être modifier dans les boucles "for".
+Ensuite, vient l'initialisation des variables. Les deux premières viennent récupérer les dimensions de l'image originale. Les deux suivantes viennent déterminer celles de l'image compressée. Enfin, les deux dernière viennent indiquer quel pixel de l'image comprimée va être modifier dans les boucles *for*.
 ```python
 orig_imgy = len(img)
 orig_imgx = len(img[0])
@@ -204,26 +200,63 @@ comp_imgx = int(len(img[0])*ratio)
 pos_y = 0
 pos_x = 0
 ``` 
-:::{admonition} Conseil
+:::{admonition} Remarque
 ---
 class: tip
 ---
-Il est visible que x et y ont été inversées, en effet, là où avant c'était la coordonnée y qui accèdait aux sous-listes, c'est désormais la coordonnées x.
+Il est visible que les *x* et *y* ont été inversées, en effet, là où avant c'était la coordonnée y qui accèdait aux sous-listes, c'est désormais la coordonnées x.
 :::
+
 Après on crée une liste vide N fois plus petite (N correspondrait au ratio de compression).
 ```python
 img_compress = [[0]*comp_imgx]*comp_imgy
 ```
-:::{admonition} Conseil
----
-class: tip
----
-En python, il existe plusieurs manières de faire une liste de listes de tailles données. Une première méthode consiste 
-:::
+Ces boucles *for* permettent de parcourrir l'entièrté des pixels de l'image compressée
+```python
+for y in range(comp_imgy):
+        for x in range(y):
+```
+Pour définir de quelle couleur sera le pixel, on peut définir une nouvelle fonction (dans le code suivant elle est directement intégré dans la fonction *compress*, néanmoins il possible de la définir globalement). Cette dernière comportera quatre arguments:
+* img: l'image initial sous forme de liste.
+* coor_x: la coordonnée en *x* de départ.
+* coor_y: la coordonnée en *y* de départ.
+* _len: le nombre de pixel a prendre en compte pour chaque coordonnée
+* _format: le format de l'image
 
+[à remplir]
 
+```python
+color = calc_avg(img, int(pos_x/ratio), int(pos_y/ratio), int(1/ratio)-1, _format)
+```
+Ensuite, une première variable est initialisée, nommée *nb_val*, elle servira de compteur pour savoir combien de pixel on été pris en compte. À partir de ce moment, il va falloir différencier le format couleur des deux autres. En effet, les images en nuances de gris et en noir/blanc représente leur pixel au travers d'*integer* alors que celles en couleurs les représentent sous forme d'une liste de trois *integers*. Le premier représentant le rouge, le deuxième le vert et le dernier le bleu. Cette différence oblige donc à faire deux versions différentes des boucles.
 
-
+La première vient juste additionner les valeurs des pixels dans une variable avant de diviser le résultat par le nombre de pixels.
+```python
+if _format == "PBM" or _format == "PGM":
+            val = 0
+            for y in range(coor_y, coor_y + _len):
+                for x in range(coor_x, coor_x + _len):
+                    val = val + img[y][x]
+                nb_val = nb_val + 1
+            
+            if nb_val != 0:
+                val = int(val/nb_val)
+```
+La deuxième quant à elle vient additionner les valeurs RGB dans une liste, chacune des valeurs totales est ensuite diviser par le nombre de pixel pris en compte.
+```python
+elif _format == "PPM":
+            val = [0, 0, 0]
+            for y in range(coor_y, coor_y + _len):
+                for x in range(coor_x, coor_x + _len):
+                    for _ in len(val):
+                        val[_] = img[y][x][_]
+                    nb_val = nb_val + 1
+        
+            if nb_val != 0:
+                for _ in len(val):
+                    val[_] = val[_] / nb_val
+```
+Dans les deux cas, la sous-fonction fini par retourner la valeur du nouveau pixel. Cette valeur est enfin assignée 
 
 ```python
 def compress(img:list, ratio:float, _format:str) -> list:
@@ -242,11 +275,9 @@ def compress(img:list, ratio:float, _format:str) -> list:
             if nb_val != 0:
                 val = int(val/nb_val)
             
-            return val
             
         elif _format == "PPM":
             val = [0, 0, 0]
-        
             for y in range(coor_y, coor_y + _len):
                 for x in range(coor_x, coor_x + _len):
                     for _ in len(val):
@@ -257,7 +288,7 @@ def compress(img:list, ratio:float, _format:str) -> list:
                 for _ in len(val):
                     val[_] = val[_] / nb_val
             
-            return val
+        return val
     
     
     orig_imgy = len(img)
@@ -270,7 +301,6 @@ def compress(img:list, ratio:float, _format:str) -> list:
     img_compress = [[0]*comp_imgx]*comp_imgy
         
     for y in range(comp_imgy):
-        
         for x in range(y):
             color = calc_avg(img, int(pos_x/ratio), int(pos_y/ratio), int(1/ratio)-1, _format)
             img_compress[pos_y][pos_x] = color
