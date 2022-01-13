@@ -159,8 +159,7 @@ Pour tout les exercices de cette série c'est la règle suivante qui s'applique:
 
         Si >=2/4 px sont noir -> nouveau pixel noir
 :::
-1. 
-```{figure} imgs/exo/1/1.png
+1. ```{figure} imgs/exo/1/1.png
 ---
 width: 200
 ---
@@ -178,8 +177,7 @@ width: 200
 ---
 (B)
 ```
-1. 
-```{figure} imgs/exo/1/2.png
+2. ```{figure} imgs/exo/1/2.png
 ---
 width: 200
 ---
@@ -197,8 +195,7 @@ width: 200
 ---
 (B)
 ```
-1. 
-```{figure} imgs/exo/1/3.png
+3. ```{figure} imgs/exo/1/3.png
 ---
 width: 200
 ---
@@ -216,8 +213,7 @@ width: 200
 ---
 (B)
 ```
-1. 
-```{figure} imgs/exo/1/4.png
+4. ```{figure} imgs/exo/1/4.png
 ---
 width: 200
 ---
@@ -235,8 +231,7 @@ width: 200
 ---
 (B)
 ```
-1. 
-```{figure} imgs/exo/1/5.png
+5. ```{figure} imgs/exo/1/5.png
 ---
 width: 200
 ---
@@ -254,8 +249,7 @@ width: 200
 ---
 (B)
 ```
-1. 
-```{figure} imgs/exo/1/6.png
+6. ```{figure} imgs/exo/1/6.png
 ---
 width: 200
 ---
@@ -273,8 +267,7 @@ width: 200
 ---
 (B)
 ```
-1. 
-```{figure} imgs/exo/1/7.png
+7. ```{figure} imgs/exo/1/7.png
 ---
 width: 200
 ---
@@ -292,8 +285,7 @@ width: 200
 ---
 (B)
 ```
-1. 
-```{figure} imgs/exo/1/8.png
+8. ```{figure} imgs/exo/1/8.png
 ---
 width: 200
 ---
@@ -311,8 +303,7 @@ width: 200
 ---
 (B)
 ```
-1. 
-```{figure} imgs/exo/1/9.png
+9. ```{figure} imgs/exo/1/9.png
 ---
 width: 200
 ---
@@ -330,8 +321,7 @@ width: 200
 ---
 (B)
 ```
-1. 
-```{figure} imgs/exo/1/10.png
+10. ```{figure} imgs/exo/1/10.png
 ---
 width: 200
 ---
@@ -351,6 +341,8 @@ width: 200
 ```
 Les corrigés de ces exercices se trouvent en fin de chapitre.
 
+
+Cette série d'exercices permet de mettre une chose
 
 
 ## Solution des exercices
