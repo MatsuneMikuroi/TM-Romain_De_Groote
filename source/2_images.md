@@ -370,33 +370,63 @@ Les bonnes réponses étaient
 #### Explications
 1. 
 ```{figure} imgs/exo/1/1_right.png
+---
+width: 200
+---
 ```
 2. 
 ```{figure} imgs/exo/1/2_right.png
+---
+width: 200
+---
 ```
 3. 
 ```{figure} imgs/exo/1/3_right.png
+---
+width: 200
+---
 ```
 4. 
 ```{figure} imgs/exo/1/4_right.png
+---
+width: 200
+---
 ```
 5. 
 ```{figure} imgs/exo/1/5_right.png
+---
+width: 200
+---
 ```
 6. 
 ```{figure} imgs/exo/1/6_right.png
+---
+width: 200
+---
 ```
 7. 
 ```{figure} imgs/exo/1/7_right.png
+---
+width: 200
+---
 ```
 8. 
 ```{figure} imgs/exo/1/8_right.png
+---
+width: 200
+---
 ```
 9. 
 ```{figure} imgs/exo/1/9_right.png
+---
+width: 200
+---
 ```
 10. 
 ```{figure} imgs/exo/1/10_right.png
+---
+width: 200
+---
 ```
 ## Explications des algorithmes
  :::{admonition} Notions à connaitre
