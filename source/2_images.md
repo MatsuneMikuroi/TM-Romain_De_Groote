@@ -8,76 +8,51 @@ Avant de commencer de s'attquer à la compression pure, il est bon de comprendre
 De nos jours, tout a été numérisé. Or, contrairement à une photo prise par un appareil polaroid, qui reproduit exactement la réalité, l’ordinateur est limité dans sa représentation des images. Il ne peut par exemple par dessiner de cercle. Cela est dû au fait que pour afficher quelque chose, l’ordinateur allume des minuscules leds. Il est d’ailleurs possible, suivant votre niveau de vue, de les distinguer si vous êtes sur ordinateur. Sinon, voici une image dont les carrés sont de respectivement 64, 32, 16, 8, 4, 2 et 1 pixels.
 
 ```{figure} imgs/pixel.png
----
-alt
----
+:alt:
 Le point bleu minuscule sur l'écran est de 1px*1px. Cette image est surtout utile si le script est en version informatique.
 ```
  C’est donc à cause de cette façon d’afficher les images qu’il est impossible de demander à l’ordinateur d’afficher de cercle, néanmoins, il est possible de lui demander de créer un polygone ressemblant fortement à un cercle. Voici un exemple :
+
 ```{figure} imgs/circle/512x512.png
 ---
-alt
+align: center
 ---
 Représentation d'un cercle dans un carré de 512px*512px.
 ```
-
 Le cercle ci-dessus à un diamètre de 512 pixels, l'image ayant une haute résolution, la forme nous apparait comme un cercle. Qu'est-ce qu'il se passerait maintenant si la taille de  l'image était réduite ? Diminuons sa taille par un facteur 2.
+
 ```{figure} imgs/circle/256x256.png
----
-alt
----
 Représentation d'un cercle dans un carré de 256px*256px.
 ```
-
 En diminuant la taille de ce cercle par 2, il devient possible de distinguer quelques endroits où les pixels semblent plus dessiner des cotés qu’une véritable courbe, comme sur le haut du cercle. Continuons de diminuer la taille de l'image, toujours avec un facteur 2.
+
 ```{figure} imgs/circle/128x128.png
----
-alt
----
 Représentation d'un cercle dans un carré de 128px*128px.
 ```
 Il devient maintenant plus évident que ce qui ressemblait à un cercle commence à devenir un polygone avec un très grand nombre de côté. Le haut semble commencer à s'aplatir. Si l'on continue cela nous donne les résultats suivants:
 
 ```{figure} imgs/circle/64x64.png
----
-alt
----
 Représentation d'un cercle dans un carré de 64px*64px.
 ```
 ```{figure} imgs/circle/32x32.png
----
-alt
----
 Représentation d'un cercle dans un carré de 32px*32px.
 ```
 ```{figure} imgs/circle/16x16.png
----
-alt
----
 Représentation d'un cercle dans un carré de 16px*16px.
 ```
 Pour ces trois images, la compression rend bien visible le fait que ce ne soit pas réellement un cercle. Néanmoins il peut encore être facilement acceptable qu'elles en représentent un. Ce qui n'est pas le cas des trois derniers niveaux de compression.
 
 ```{figure} imgs/circle/8x8.png
----
-alt
----
 Représentation d'un cercle dans un carré de 8px*8px.
 ```
 Désormais, l'image semble plus représenter un polygone quelconque qu'un cercle, ceci nous fixe une limite : arriver à un certain stade, une image trop comprimer peut perdre des détails essentiels à sa compréhension.
 
 ```{figure} imgs/circle/4x4.png
----
-alt
----
 Représentation d'un cercle dans un carré de 4px*4px.
 ```
 Pour cette avant dernière image, il n'est plus possible de répertorier cette figure comme un cercle, l'information original a entièrement été perdu.
 
 ```{figure} imgs/circle/2x2.png
----
-alt
----
 Représentation d'un cercle dans un carré de 2px*2px.
 ```
 Enfin, l'image à tellement été comprimé qu'il ne reste que du noir. La seule information qu'il est alors possible de supposer est que la couleur principale de l'image était le noir.
@@ -87,9 +62,6 @@ Cette petite expérience permet de démontrer qu'il n'est pas possible de réell
 Maintenant, il est possible de se demander comment l'ordinateur a perdu ces détails. Lorsque l'on réduit la taille d'une image, l'ordinateur va chercher quels sont les pixels les moins importants. Prenons l'exemple d'une photo d'un paysage montagneux pour comprendre.
 
 ```{figure} imgs/mountains/32x32.png
----
-alt
----
 ---
 class: with border
 ---
@@ -103,9 +75,6 @@ Voilà le résultat:
 
 ```{figure} imgs/mountains/black/16x16.png
 ---
-alt
----
----
 class: with border
 ---
 Paysage en 16px*16px.
@@ -113,9 +82,6 @@ Paysage en 16px*16px.
 L'idée de l'image reste là, néanmoins les détails ont été perdu. Pourquoi ? Les oiseaux devraient encore être visibles, du moins en partie car ceux étaient représenté dans un rectangle de 3 pixels de long par 2 de haut. Même chose pour l'astre présent dans le ciel, il faisait 2 pixels de côté. Alors pourquoi tous ces détails ont-ils disparus ? La faute n'est pas à reprocher à l'ordinateur mais à pas-de-bol. Reprenons notre première image mais cette fois-ci mettons lui un cadrillage de 2px*2px dessus.
 
 ```{figure} imgs/mountains/32x32_gride.png
----
-alt
----
 ---
 class: with border
 ---
@@ -126,9 +92,6 @@ Mais reprenons notre image en 16px*16px, que se passe-t-il si l'on continue de l
 
 ```{figure} imgs/mountains/black/8x8.png
 ---
-alt
----
----
 class: with border
 ---
 Paysage en 8px*8px.
@@ -136,9 +99,6 @@ Paysage en 8px*8px.
 Comme avec le cercle, on arrive à un stade où la perte d'information devient trop grande. Avec une connaissance de l'image d'origine il est possible d'encore se la représenter, mais sans cela est tout bonnement impossible.
 
 ```{figure} imgs/mountains/black/4x4.png
----
-alt
----
 ---
 class: with border
 ---
@@ -148,9 +108,6 @@ Arrivée à ce stade, l'image n'est même plus imaginable. Aucune réelle inform
 
 ```{figure} imgs/mountains/black/2x2.png
 ---
-alt
----
----
 class: with border
 ---
 Paysage en 2px*2px.
@@ -159,9 +116,6 @@ L’image désormais semble révélé qu’il y avait une grande structure dans 
 
 ```{figure} imgs/mountains/black/1x1.png
 ---
-alt
----
----
 class: with border
 ---
 Paysage en 1px*1px.
@@ -169,9 +123,6 @@ Paysage en 1px*1px.
 Comme pour le cercle, on se retrouve avec une image finale entièrement noire. Cela est dû à la présence des montagnes dans la partie inférieure. Mais quel est le problème alors ? Reprenons notre image de départ et comparons là avec celle-ci
 
 ```{figure} imgs/mountains/32x32.png
----
-alt
----
 ---
 class: with border
 ---
@@ -186,19 +137,12 @@ Essayons désormais en changeant la règle de compression.
 Le changement est, en soi, minime. La seule différnce étant que si 2/4 px sont noir alors le nouveau pixel sera blanc, voyons les impacts que cela a.
 ```{figure} imgs/mountains/white/16x16.png
 ---
-alt
----
----
 class: with border
 ---
-
 Première compression avec la nouvelle règle. (16px*16px)
 ```
 Ce changement, bien qu'infime, vient pratiquement de faire disparaître l'image en sa totalité. Cela est du fait que la majorité des pixels noirs sur la première image provenaient de groupe de pixels souvent à la limite du critère d'acceptabilité de la règle.
 ```{figure} imgs/mountains/32x32_gride.png
----
-alt
----
 ---
 class: with border
 ---
@@ -222,26 +166,17 @@ Pour tout les exercices de cette série c'est la règle suivante qui s'applique:
 1. 
 ```{figure} imgs/exo/1/1.png
 ---
-alt
----
----
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
 ```{figure} imgs/exo/1/1_wrong.png
 ---
-alt
----
----
 width: 200
 ---
 (A)
 ```
 ```{figure} imgs/exo/1/1_right.png
----
-alt
----
 ---
 width: 200
 ---
@@ -250,26 +185,17 @@ width: 200
 2. 
 ```{figure} imgs/exo/1/2.png
 ---
-alt
----
----
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
 ```{figure} imgs/exo/1/2_right.png
 ---
-alt
----
----
 width: 200
 ---
 (A)
 ```
 ```{figure} imgs/exo/1/2_wrong.png
----
-alt
----
 ---
 width: 200
 ---
@@ -278,26 +204,17 @@ width: 200
 3. 
 ```{figure} imgs/exo/1/3.png
 ---
-alt
----
----
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
 ```{figure} imgs/exo/1/3_right.png
 ---
-alt
----
----
 width: 200
 ---
 (A)
 ```
 ```{figure} imgs/exo/1/3_wrong.png
----
-alt
----
 ---
 width: 200
 ---
@@ -306,26 +223,17 @@ width: 200
 4. 
 ```{figure} imgs/exo/1/4.png
 ---
-alt
----
----
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
 ```{figure} imgs/exo/1/4_wrong.png
 ---
-alt
----
----
 width: 200
 ---
 (A)
 ```
 ```{figure} imgs/exo/1/4_right.png
----
-alt
----
 ---
 width: 200
 ---
@@ -334,26 +242,17 @@ width: 200
 5. 
 ```{figure} imgs/exo/1/5.png
 ---
-alt
----
----
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
 ```{figure} imgs/exo/1/5_right.png
 ---
-alt
----
----
 width: 200
 ---
 (A)
 ```
 ```{figure} imgs/exo/1/5_wrong.png
----
-alt
----
 ---
 width: 200
 ---
@@ -362,26 +261,17 @@ width: 200
 6. 
 ```{figure} imgs/exo/1/6.png
 ---
-alt
----
----
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
 ```{figure} imgs/exo/1/6_wrong.png
 ---
-alt
----
----
 width: 200
 ---
 (A)
 ```
 ```{figure} imgs/exo/1/6_right.png
----
-alt
----
 ---
 width: 200
 ---
@@ -390,26 +280,17 @@ width: 200
 7. 
 ```{figure} imgs/exo/1/7.png
 ---
-alt
----
----
 width: 200
 ---
 À comprimer avec un facteur 4.
 ```
 ```{figure} imgs/exo/1/7_wrong.png
 ---
-alt
----
----
 width: 200
 ---
 (A)
 ```
 ```{figure} imgs/exo/1/7_right.png
----
-alt
----
 ---
 width: 200
 ---
@@ -418,26 +299,17 @@ width: 200
 8. 
 ```{figure} imgs/exo/1/8.png
 ---
-alt
----
----
 width: 200
 ---
 À comprimer avec un facteur 4.
 ```
 ```{figure} imgs/exo/1/8_wrong.png
 ---
-alt
----
----
 width: 200
 ---
 (A)
 ```
 ```{figure} imgs/exo/1/8_right.png
----
-alt
----
 ---
 width: 200
 ---
@@ -446,26 +318,17 @@ width: 200
 9. 
 ```{figure} imgs/exo/1/9.png
 ---
-alt
----
----
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
 ```{figure} imgs/exo/1/9_right.png
 ---
-alt
----
----
 width: 200
 ---
 (A)
 ```
 ```{figure} imgs/exo/1/9_wrong.png
----
-alt
----
 ---
 width: 200
 ---
@@ -474,26 +337,17 @@ width: 200
 10. 
 ```{figure} imgs/exo/1/10.png
 ---
-alt
----
----
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
 ```{figure} imgs/exo/1/10_wrong.png
 ---
-alt
----
----
 width: 200
 ---
 (A)
 ```
 ```{figure} imgs/exo/1/10_right.png
----
-alt
----
 ---
 width: 200
 ---
@@ -523,17 +377,11 @@ Les bonnes réponses étaient
 1. 
 ```{figure} imgs/exo/1/1_right.png
 ---
-alt
----
----
 width: 200
 ---
 ```
 2. 
 ```{figure} imgs/exo/1/2_right.png
----
-alt
----
 ---
 width: 200
 ---
@@ -541,17 +389,11 @@ width: 200
 3. 
 ```{figure} imgs/exo/1/3_right.png
 ---
-alt
----
----
 width: 200
 ---
 ```
 4. 
 ```{figure} imgs/exo/1/4_right.png
----
-alt
----
 ---
 width: 200
 ---
@@ -559,17 +401,11 @@ width: 200
 5. 
 ```{figure} imgs/exo/1/5_right.png
 ---
-alt
----
----
 width: 200
 ---
 ```
 6. 
 ```{figure} imgs/exo/1/6_right.png
----
-alt
----
 ---
 width: 200
 ---
@@ -577,17 +413,11 @@ width: 200
 7. 
 ```{figure} imgs/exo/1/7_right.png
 ---
-alt
----
----
 width: 200
 ---
 ```
 8. 
 ```{figure} imgs/exo/1/8_right.png
----
-alt
----
 ---
 width: 200
 ---
@@ -595,17 +425,11 @@ width: 200
 9. 
 ```{figure} imgs/exo/1/9_right.png
 ---
-alt
----
----
 width: 200
 ---
 ```
 10. 
 ```{figure} imgs/exo/1/10_right.png
----
-alt
----
 ---
 width: 200
 ---
