@@ -160,105 +160,197 @@ Pour tout les exercices de cette série c'est la règle suivante qui s'applique:
         Si >=2/4 px sont noir -> nouveau pixel noir
 :::
 1. 
-```{figure} imgs/exo/1/1
+```{figure} imgs/exo/1/1.png
+---
+width: 200
+---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/1/1_wrong
+```{figure} imgs/exo/1/1_wrong.png
+---
+width: 200
+---
 (A)
 ```
-```{figure} imgs/exo/1/1_right
+```{figure} imgs/exo/1/1_right.png
+---
+width: 200
+---
 (B)
 ```
-2. 
-```{figure} imgs/exo/1/2
+1. 
+```{figure} imgs/exo/1/2.png
+---
+width: 200
+---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/1/1_right
+```{figure} imgs/exo/1/2_right.png
+---
+width: 200
+---
 (A)
 ```
-```{figure} imgs/exo/1/2_wrong
+```{figure} imgs/exo/1/2_wrong.png
+---
+width: 200
+---
 (B)
 ```
-3. 
-```{figure} imgs/exo/1/3
+1. 
+```{figure} imgs/exo/1/3.png
+---
+width: 200
+---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/1/1_right
+```{figure} imgs/exo/1/3_right.png
+---
+width: 200
+---
 (A)
 ```
-```{figure} imgs/exo/1/3_wrong
+```{figure} imgs/exo/1/3_wrong.png
+---
+width: 200
+---
 (B)
 ```
-4. 
-```{figure} imgs/exo/1/4
+1. 
+```{figure} imgs/exo/1/4.png
+---
+width: 200
+---
+À comprimer avec un facteur 2.
+```
+```{figure} imgs/exo/1/4_wrong.png
+---
+width: 200
+---
+(A)
+```
+```{figure} imgs/exo/1/4_right.png
+---
+width: 200
+---
+(B)
+```
+1. 
+```{figure} imgs/exo/1/5.png
+---
+width: 200
+---
+À comprimer avec un facteur 2.
+```
+```{figure} imgs/exo/1/5_right.png
+---
+width: 200
+---
+(A)
+```
+```{figure} imgs/exo/1/5_wrong.png
+---
+width: 200
+---
+(B)
+```
+1. 
+```{figure} imgs/exo/1/6.png
+---
+width: 200
+---
+À comprimer avec un facteur 2.
+```
+```{figure} imgs/exo/1/6_wrong.png
+---
+width: 200
+---
+(A)
+```
+```{figure} imgs/exo/1/6_right.png
+---
+width: 200
+---
+(B)
+```
+1. 
+```{figure} imgs/exo/1/7.png
+---
+width: 200
+---
 À comprimer avec un facteur 4.
 ```
-```{figure} imgs/exo/1/4_wrong
+```{figure} imgs/exo/1/7_wrong.png
+---
+width: 200
+---
 (A)
 ```
-```{figure} imgs/exo/1/1_right
+```{figure} imgs/exo/1/7_right.png
+---
+width: 200
+---
 (B)
 ```
-5. 
-```{figure} imgs/exo/1/5
-À comprimer avec un facteur 3.
-```
-```{figure} imgs/exo/1/1_right
-(A)
-```
-```{figure} imgs/exo/1/5_wrong
-(B)
-```
-6. 
-```{figure} imgs/exo/1/6
-À comprimer avec un facteur 3.
-```
-```{figure} imgs/exo/1/6_wrong
-(A)
-```
-```{figure} imgs/exo/1/1_right
-(B)
-```
-7. 
-```{figure} imgs/exo/1/7
-À comprimer avec un facteur 2.
-```
-```{figure} imgs/exo/1/7_wrong
-(A)
-```
-```{figure} imgs/exo/1/1_right
-(B)
-```
-8. 
-```{figure} imgs/exo/1/8
+1. 
+```{figure} imgs/exo/1/8.png
+---
+width: 200
+---
 À comprimer avec un facteur 4.
 ```
-```{figure} imgs/exo/1/8_wrong
+```{figure} imgs/exo/1/8_wrong.png
+---
+width: 200
+---
 (A)
 ```
-```{figure} imgs/exo/1/1_right
+```{figure} imgs/exo/1/8_right.png
+---
+width: 200
+---
 (B)
 ```
-9. 
-```{figure} imgs/exo/1/9
+1. 
+```{figure} imgs/exo/1/9.png
+---
+width: 200
+---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/1/1_right
+```{figure} imgs/exo/1/9_right.png
+---
+width: 200
+---
 (A)
 ```
-```{figure} imgs/exo/1/9_wrong
+```{figure} imgs/exo/1/9_wrong.png
+---
+width: 200
+---
 (B)
 ```
-10. 
-```{figure} imgs/exo/1/10
+1. 
+```{figure} imgs/exo/1/10.png
+---
+width: 200
+---
 À comprimer avec un facteur 4.
 ```
-```{figure} imgs/exo/1/10_wrong
+```{figure} imgs/exo/1/10_wrong.png
+---
+width: 200
+---
 (A)
 ```
-```{figure} imgs/exo/1/1_right
+```{figure} imgs/exo/1/10_right.png
+---
+width: 200
+---
 (B)
 ```
+Les corrigés de ces exercices se trouvent en fin de chapitre.
+
 
 
 ## Solution des exercices
@@ -277,34 +369,34 @@ Les bonnes réponses étaient
 10. (B)
 #### Explications
 1. 
-```{figure} imgs/exo/1/1_right
+```{figure} imgs/exo/1/1_right.png
 ```
 2. 
-```{figure} imgs/exo/1/2_right
+```{figure} imgs/exo/1/2_right.png
 ```
 3. 
-```{figure} imgs/exo/1/3_right
+```{figure} imgs/exo/1/3_right.png
 ```
 4. 
-```{figure} imgs/exo/1/4_right
+```{figure} imgs/exo/1/4_right.png
 ```
 5. 
-```{figure} imgs/exo/1/5_right
+```{figure} imgs/exo/1/5_right.png
 ```
 6. 
-```{figure} imgs/exo/1/6_right
+```{figure} imgs/exo/1/6_right.png
 ```
 7. 
-```{figure} imgs/exo/1/7_right
+```{figure} imgs/exo/1/7_right.png
 ```
 8. 
-```{figure} imgs/exo/1/8_right
+```{figure} imgs/exo/1/8_right.png
 ```
 9. 
-```{figure} imgs/exo/1/9_right
+```{figure} imgs/exo/1/9_right.png
 ```
 10. 
-```{figure} imgs/exo/1/10_right
+```{figure} imgs/exo/1/10_right.png
 ```
 ## Explications des algorithmes
  :::{admonition} Notions à connaitre
