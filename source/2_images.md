@@ -1,5 +1,5 @@
 # La compression d'images
-L'objectif de ce chapitre va-t-être d'enseigner le principe de la compression d'image au travers d'exercices au début présents dans ce script et par la suite qui seront dans un terminal web. Les élèves ont également un corrigé détaillé en fin de chapitre concernant les exercices inclus dans le script. 
+L'objectif de ce chapitre va-t-être d'enseigner le principe de la compression d'image au travers d'exercices présents dans ce script et qui peuvent être complétés par d'autre trouvable dans le dossier de travail. Les élèves ont également un corrigé détaillé en fin de chapitre concernant les exercices inclus dans le script.
 ## Théorie
 ### Représentation des images
 Avant de commencer de s'attquer à la compression pure, il est bon de comprendre la manière dont l'ordinateur représente des images.
@@ -12,69 +12,42 @@ Le point bleu minuscule sur l'écran est de 1px*1px. Cette image est surtout uti
 ```
  C’est donc à cause de cette façon d’afficher les images qu’il est impossible de demander à l’ordinateur d’afficher de cercle, néanmoins, il est possible de lui demander de créer un polygone ressemblant fortement à un cercle. Voici un exemple :
 ```{figure} imgs/circle/512x512.png
----
-class: with border
----
 Représentation d'un cercle dans un carré de 512px*512px.
 ```
+
 Le cercle ci-dessus à un diamètre de 512 pixels, l'image ayant une haute résolution, la forme nous apparait comme un cercle. Qu'est-ce qu'il se passerait maintenant si la taille de  l'image était réduite ? Diminuons sa taille par un facteur 2.
 ```{figure} imgs/circle/256x256.png
----
-class: with border
----
 Représentation d'un cercle dans un carré de 256px*256px.
 ```
-En diminuant la taille de ce cercle par 2, il devient possible de distinguer quelques endroits où les pixels semblent plus dessiner des cotés qu’une véritable courbe, comme sur le haut du cercle. Continuons de diminuer la taille de l'image, toujours avec un facteur 2.
 
+En diminuant la taille de ce cercle par 2, il devient possible de distinguer quelques endroits où les pixels semblent plus dessiner des cotés qu’une véritable courbe, comme sur le haut du cercle. Continuons de diminuer la taille de l'image, toujours avec un facteur 2.
 ```{figure} imgs/circle/128x128.png
----
-class: with border
----
 Représentation d'un cercle dans un carré de 128px*128px.
 ```
 Il devient maintenant plus évident que ce qui ressemblait à un cercle commence à devenir un polygone avec un très grand nombre de côté. Le haut semble commencer à s'aplatir. Si l'on continue cela nous donne les résultats suivants:
 
 ```{figure} imgs/circle/64x64.png
----
-class: with border
----
 Représentation d'un cercle dans un carré de 64px*64px.
 ```
 ```{figure} imgs/circle/32x32.png
----
-class: with border
----
 Représentation d'un cercle dans un carré de 32px*32px.
 ```
 ```{figure} imgs/circle/16x16.png
----
-class: with border
----
 Représentation d'un cercle dans un carré de 16px*16px.
-
 ```
 Pour ces trois images, la compression rend bien visible le fait que ce ne soit pas réellement un cercle. Néanmoins il peut encore être facilement acceptable qu'elles en représentent un. Ce qui n'est pas le cas des trois derniers niveaux de compression.
 
 ```{figure} imgs/circle/8x8.png
----
-class: with border
----
 Représentation d'un cercle dans un carré de 8px*8px.
 ```
 Désormais, l'image semble plus représenter un polygone quelconque qu'un cercle, ceci nous fixe une limite : arriver à un certain stade, une image trop comprimer peut perdre des détails essentiels à sa compréhension.
 
 ```{figure} imgs/circle/4x4.png
----
-class: with border
----
 Représentation d'un cercle dans un carré de 4px*4px.
 ```
 Pour cette avant dernière image, il n'est plus possible de répertorier cette figure comme un cercle, l'information original a entièrement été perdu.
 
 ```{figure} imgs/circle/2x2.png
----
-class: with border
----
 Représentation d'un cercle dans un carré de 2px*2px.
 ```
 Enfin, l'image à tellement été comprimé qu'il ne reste que du noir. La seule information qu'il est alors possible de supposer est que la couleur principale de l'image était le noir.
@@ -171,18 +144,168 @@ class: with border
 ---
 Avec la vue que nous permet le cadrillage, il devient assez vite compréhensible de ces raisons.
 ```
-#### Exercice 1: le paysage.
-Vers le milieu des années nonante, Jean est photographe proffesionnel et réalise des commandes que des entreprises lui demande. Sa spécificité ? Ses photos font 32px*32 et ne sont qu'en noir et blanc, sans nuance de gris. Son ordinateur récemment acheter n'a plus le même algorithme de compression par défaut. Jean était habitué à la règle 1, c'est désormais la seconde qui s'applique.
-
-Un 
-
-Néanmoins, on pourait imaginer un cas bien précis où l'ordinateur appliquerait la règle 2 par défaut (sans que le photographe ne puisse la changer) et que son client, pas trop pointilleux, est surtout intéressé par les montagnes.
 
  Et c'est là l'un des défis de la compression de données: développer des algorithmes qui vont comprimer les images de manières à ce qu'elles prennent le moins de place possible tout en gardant un maximum d'éléments essentiels. Et ce qui est entendu par éléments essentiels change en fonction du contexte. Un fond d'écran va demander une image avec une très haute résolution et donc assez lourde, alors qu'un memes partager sur les réseaux sociaux aura tendance à avoir une résolution plus faible car plus l'image est légère, moins elle prendra de temps à charger et d'espace dans les serveurs de l'entreprise derrière.
 
-## Solution des exercices
-### Exercice 1
+ ### Série d'exercices 1
+ :::{admonition} Consigne
+ Dans cette première série d'exercices, une image vous sera montrer, vous devrez ensuite choisir entre deux versions compressées de cette image. Le facteur de compression sera toujours indiqué en dessous de la première image.
+:::
+:::{admonition} Règle de compression
+---
+class: attention
+---
+Pour tout les exercices de cette série c'est la règle suivante qui s'applique:
 
+        Si >=2/4 px sont noir -> nouveau pixel noir
+:::
+1. 
+```{figure} imgs/exo/1/1
+À comprimer avec un facteur 2.
+```
+```{figure} imgs/exo/1/1_wrong
+(A)
+```
+```{figure} imgs/exo/1/1_right
+(B)
+```
+2. 
+```{figure} imgs/exo/1/2
+À comprimer avec un facteur 2.
+```
+```{figure} imgs/exo/1/1_right
+(A)
+```
+```{figure} imgs/exo/1/2_wrong
+(B)
+```
+3. 
+```{figure} imgs/exo/1/3
+À comprimer avec un facteur 2.
+```
+```{figure} imgs/exo/1/1_right
+(A)
+```
+```{figure} imgs/exo/1/3_wrong
+(B)
+```
+4. 
+```{figure} imgs/exo/1/4
+À comprimer avec un facteur 4.
+```
+```{figure} imgs/exo/1/4_wrong
+(A)
+```
+```{figure} imgs/exo/1/1_right
+(B)
+```
+5. 
+```{figure} imgs/exo/1/5
+À comprimer avec un facteur 3.
+```
+```{figure} imgs/exo/1/1_right
+(A)
+```
+```{figure} imgs/exo/1/5_wrong
+(B)
+```
+6. 
+```{figure} imgs/exo/1/6
+À comprimer avec un facteur 3.
+```
+```{figure} imgs/exo/1/6_wrong
+(A)
+```
+```{figure} imgs/exo/1/1_right
+(B)
+```
+7. 
+```{figure} imgs/exo/1/7
+À comprimer avec un facteur 2.
+```
+```{figure} imgs/exo/1/7_wrong
+(A)
+```
+```{figure} imgs/exo/1/1_right
+(B)
+```
+8. 
+```{figure} imgs/exo/1/8
+À comprimer avec un facteur 4.
+```
+```{figure} imgs/exo/1/8_wrong
+(A)
+```
+```{figure} imgs/exo/1/1_right
+(B)
+```
+9. 
+```{figure} imgs/exo/1/9
+À comprimer avec un facteur 2.
+```
+```{figure} imgs/exo/1/1_right
+(A)
+```
+```{figure} imgs/exo/1/9_wrong
+(B)
+```
+10. 
+```{figure} imgs/exo/1/10
+À comprimer avec un facteur 4.
+```
+```{figure} imgs/exo/1/10_wrong
+(A)
+```
+```{figure} imgs/exo/1/1_right
+(B)
+```
+
+
+## Solution des exercices
+### Série d'exercices 1
+#### Réponses
+Les bonnes réponses étaient
+1. (B)
+2. (A)
+3. (A)
+4. (B)
+5. (A)
+6. (B)
+7. (B)
+8. (B)
+9. (A)
+10. (B)
+#### Explications
+1. 
+```{figure} imgs/exo/1/1_right
+```
+2. 
+```{figure} imgs/exo/1/2_right
+```
+3. 
+```{figure} imgs/exo/1/3_right
+```
+4. 
+```{figure} imgs/exo/1/4_right
+```
+5. 
+```{figure} imgs/exo/1/5_right
+```
+6. 
+```{figure} imgs/exo/1/6_right
+```
+7. 
+```{figure} imgs/exo/1/7_right
+```
+8. 
+```{figure} imgs/exo/1/8_right
+```
+9. 
+```{figure} imgs/exo/1/9_right
+```
+10. 
+```{figure} imgs/exo/1/10_right
+```
 ## Explications des algorithmes
  :::{admonition} Notions à connaitre
 ---
