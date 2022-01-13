@@ -14,51 +14,73 @@ Le point bleu minuscule sur l'écran est de 1px*1px. Cette image est surtout uti
  C’est donc à cause de cette façon d’afficher les images qu’il est impossible de demander à l’ordinateur d’afficher de cercle, néanmoins, il est possible de lui demander de créer un polygone ressemblant fortement à un cercle. Voici un exemple :
 
 ```{figure} imgs/circle/512x512.png
----
-align: center
----
 Représentation d'un cercle dans un carré de 512px*512px.
 ```
 Le cercle ci-dessus à un diamètre de 512 pixels, l'image ayant une haute résolution, la forme nous apparait comme un cercle. Qu'est-ce qu'il se passerait maintenant si la taille de  l'image était réduite ? Diminuons sa taille par un facteur 2.
 
 ```{figure} imgs/circle/256x256.png
+---
+width: 256
+---
 Représentation d'un cercle dans un carré de 256px*256px.
 ```
 En diminuant la taille de ce cercle par 2, il devient possible de distinguer quelques endroits où les pixels semblent plus dessiner des cotés qu’une véritable courbe, comme sur le haut du cercle. Continuons de diminuer la taille de l'image, toujours avec un facteur 2.
 
 ```{figure} imgs/circle/128x128.png
+---
+width: 256
+---
 Représentation d'un cercle dans un carré de 128px*128px.
 ```
 Il devient maintenant plus évident que ce qui ressemblait à un cercle commence à devenir un polygone avec un très grand nombre de côté. Le haut semble commencer à s'aplatir. Si l'on continue cela nous donne les résultats suivants:
 
 ```{figure} imgs/circle/64x64.png
+---
+width: 256
+---
 Représentation d'un cercle dans un carré de 64px*64px.
 ```
 ```{figure} imgs/circle/32x32.png
+---
+width: 256
+---
 Représentation d'un cercle dans un carré de 32px*32px.
 ```
 ```{figure} imgs/circle/16x16.png
+---
+width: 256
+---
 Représentation d'un cercle dans un carré de 16px*16px.
 ```
 Pour ces trois images, la compression rend bien visible le fait que ce ne soit pas réellement un cercle. Néanmoins il peut encore être facilement acceptable qu'elles en représentent un. Ce qui n'est pas le cas des trois derniers niveaux de compression.
 
 ```{figure} imgs/circle/8x8.png
+---
+width: 256
+---
 Représentation d'un cercle dans un carré de 8px*8px.
 ```
 Désormais, l'image semble plus représenter un polygone quelconque qu'un cercle, ceci nous fixe une limite : arriver à un certain stade, une image trop comprimer peut perdre des détails essentiels à sa compréhension.
 
 ```{figure} imgs/circle/4x4.png
+---
+width: 256
+---
 Représentation d'un cercle dans un carré de 4px*4px.
 ```
 Pour cette avant dernière image, il n'est plus possible de répertorier cette figure comme un cercle, l'information original a entièrement été perdu.
 
 ```{figure} imgs/circle/2x2.png
+---
+width: 256
+---
 Représentation d'un cercle dans un carré de 2px*2px.
 ```
 Enfin, l'image à tellement été comprimé qu'il ne reste que du noir. La seule information qu'il est alors possible de supposer est que la couleur principale de l'image était le noir.
 
 Cette petite expérience permet de démontrer qu'il n'est pas possible de réellement représenter des courbes sur un écran d'ordinateur. En effet, si cela était possible il n'y aurait pas eu de déformation du cercle, et il aurait toujours été possible d'en voir en dans une image de 2 pixels par 2 pixels.
 
+### Images en noir et blanc
 Maintenant, il est possible de se demander comment l'ordinateur a perdu ces détails. Lorsque l'on réduit la taille d'une image, l'ordinateur va chercher quels sont les pixels les moins importants. Prenons l'exemple d'une photo d'un paysage montagneux pour comprendre.
 
 ```{figure} imgs/mountains/32x32.png
@@ -151,7 +173,7 @@ Avec la vue que nous permet le cadrillage, il devient assez vite compréhensible
 
  Et c'est là l'un des défis de la compression de données: développer des algorithmes qui vont comprimer les images de manières à ce qu'elles prennent le moins de place possible tout en gardant un maximum d'éléments essentiels. Et ce qui est entendu par éléments essentiels change en fonction du contexte. Un fond d'écran va demander une image avec une très haute résolution et donc assez lourde, alors qu'un memes partager sur les réseaux sociaux aura tendance à avoir une résolution plus faible car plus l'image est légère, moins elle prendra de temps à charger et d'espace dans les serveurs de l'entreprise derrière.
 
- ### Série d'exercices 1
+ #### Série d'exercices 1
  :::{admonition} Consigne
  Dans cette première série d'exercices, une image vous sera montrer, vous devrez ensuite choisir entre deux versions compressées de cette image. Le facteur de compression sera toujours indiqué en dessous de la première image.
 :::
@@ -356,12 +378,32 @@ width: 200
 Les corrigés de ces exercices se trouvent en fin de chapitre.
 
 
-Cette série d'exercices permet de mettre entre autre une chose en avant: La compression des "cercles". 
+Cette série d'exercices permet de mettre entre autre une chose en avant: La compression des "cercles". Ceux-ci ont tendance à vite partiellement s'effacer lorsqu'on les comprime et qu'ils sont trop fin. Pour éviter ce problème, il peut être judicieux d'avoir des contours assez marqués pour toute forme un peu courbe.
+
+#### Série d'exercices 2
+:::{warning}
+Cette série d'exercice varie selon si le script est en version papier ou en version web. Dans les deux cas des solutions seront proposées aux élèves, néanmoins, la version web étant automatisé, la correction sera plus terre-à-terre.
+:::
+
+:::{raw} html
+
+:::{tip}
+ Dans cette deuxième série d'exercice, vous allez pouvoir vous entrainez sur l'ordinateur directement. La fenêtre d'exécution en dessous une fois lancé vous montrera une image et vous devrez la compresser. Vous n'avez qu'à faire un clique pour passer de blanc à noir et inversemment. Il est possible de relancer le programme pour avoir une nouvelle image.
+
+
+<iframe rc="https://webtigerjython.ethz.ch/" width="100%" height="600"></iframe>
+
+:::
+
+```{admonition} Consigne
+Pour cette série d'exercice, vous aurez besoin d'une feuille cadrillée ainsi que de quoi écrire. Pour chacune des images qui suiveront, vous devrez effectuer leur conversion avec le facteur donné.
+```
 
 
 ## Solution des exercices
-### Série d'exercices 1
-#### Réponses
+### Images en noir et blanc
+#### Série d'exercices 1
+##### Réponses
 Les bonnes réponses étaient
 1. (B)
 2. (A)
@@ -373,7 +415,7 @@ Les bonnes réponses étaient
 8. (B)
 9. (A)
 10. (B)
-#### Explications
+##### Explications
 1. 
 ```{figure} imgs/exo/1/1_right.png
 ---
@@ -434,6 +476,16 @@ width: 200
 width: 200
 ---
 ```
+#### Série d'exercices 2
+
+#### Série d'exercices 3
+
+### Images en nuances de gris
+#### Série d'exercices 1
+
+### Images en couleur
+#### Série d'exercices 1
+
 ## Explications des algorithmes
  :::{admonition} Notions à connaitre
 ---
