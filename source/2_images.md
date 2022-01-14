@@ -186,199 +186,200 @@ Pour tout les exercices de cette série c'est la règle suivante qui s'applique:
         Si >=2/4 px sont noir -> nouveau pixel noir
 :::
 1. 
-```{figure} imgs/exo/1/1.png
+```{figure} imgs/exo/bw/1/1.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/1/1_wrong.png
+```{figure} imgs/exo/bw/1/1_wrong.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/1/1_right.png
+```{figure} imgs/exo/bw/1/1_right.png
 ---
 width: 200
 ---
 (B)
 ```
 2. 
-```{figure} imgs/exo/1/2.png
+```{figure} imgs/exo/bw/1/2.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/1/2_right.png
+```{figure} imgs/exo/bw/1/2_right.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/1/2_wrong.png
+```{figure} imgs/exo/bw/1/2_wrong.png
 ---
 width: 200
 ---
 (B)
 ```
 3. 
-```{figure} imgs/exo/1/3.png
+```{figure} imgs/exo/bw/1/3.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/1/3_right.png
+```{figure} imgs/exo/bw/1/3_right.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/1/3_wrong.png
+```{figure} imgs/exo/bw/1/3_wrong.png
 ---
 width: 200
 ---
 (B)
 ```
 4. 
-```{figure} imgs/exo/1/4.png
+```{figure} imgs/exo/bw/1/4.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/1/4_wrong.png
+```{figure} imgs/exo/bw/1/4_wrong.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/1/4_right.png
+```{figure} imgs/exo/bw/1/4_right.png
 ---
 width: 200
 ---
 (B)
 ```
 5. 
-```{figure} imgs/exo/1/5.png
+```{figure} imgs/exo/bw/1/5.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/1/5_right.png
+```{figure} imgs/exo/bw/1/5_right.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/1/5_wrong.png
+```{figure} imgs/exo/bw/1/5_wrong.png
 ---
 width: 200
 ---
 (B)
 ```
 6. 
-```{figure} imgs/exo/1/6.png
+```{figure} imgs/exo/bw/1/6.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/1/6_wrong.png
+```{figure} imgs/exo/bw/1/6_wrong.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/1/6_right.png
+```{figure} imgs/exo/bw/1/6_right.png
 ---
 width: 200
 ---
 (B)
 ```
 7. 
-```{figure} imgs/exo/1/7.png
+```{figure} imgs/exo/bw/1/7.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 4.
 ```
-```{figure} imgs/exo/1/7_wrong.png
+```{figure} imgs/exo/bw/1/7_wrong.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/1/7_right.png
+```{figure} imgs/exo/bw/1/7_right.png
 ---
 width: 200
 ---
 (B)
 ```
 8. 
-```{figure} imgs/exo/1/8.png
+```{figure} imgs/exo/bw/1/8.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 4.
 ```
-```{figure} imgs/exo/1/8_wrong.png
+```{figure} imgs/exo/bw/1/8_wrong.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/1/8_right.png
+```{figure} imgs/exo/bw/1/8_right.png
 ---
 width: 200
 ---
 (B)
 ```
 9. 
-```{figure} imgs/exo/1/9.png
+```{figure} imgs/exo/bw/1/9.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/1/9_right.png
+```{figure} imgs/exo/bw/1/9_right.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/1/9_wrong.png
+```{figure} imgs/exo/bw/1/9_wrong.png
 ---
 width: 200
 ---
 (B)
 ```
 10. 
-```{figure} imgs/exo/1/10.png
+```{figure} imgs/exo/bw/1/10.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/1/10_wrong.png
+```{figure} imgs/exo/bw/1/10_wrong.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/1/10_right.png
+```{figure} imgs/exo/bw/1/10_right.png
 ---
 width: 200
 ---
 (B)
 ```
+```{warning}
 Les corrigés de ces exercices se trouvent en fin de chapitre.
+```
 
-
-Cette série d'exercices permet de mettre entre autre une chose en avant: La compression des "cercles". Ceux-ci ont tendance à vite partiellement s'effacer lorsqu'on les comprime et qu'ils sont trop fin. Pour éviter ce problème, il peut être judicieux d'avoir des contours assez marqués pour toute forme un peu courbe.
+Cette série d'exercices permet de mettre entre autre une chose en avant: La compression des "cercles". Ceux-ci ont tendance à vite partiellement s'effacer lorsqu'on les comprime et qu'ils sont trop fin. Pour éviter ce problème, il peut être judicieux d'avoir des contours assez marqués pour toute forme un peu courbe. De plus,
 
 #### Série d'exercices 2
 :::{warning}
@@ -391,7 +392,7 @@ Cette série d'exercice varie selon si le script est en version papier ou en ver
  Dans cette deuxième série d'exercice, vous allez pouvoir vous entrainez sur l'ordinateur directement. La fenêtre d'exécution en dessous une fois lancé vous montrera une image et vous devrez la compresser. Vous n'avez qu'à faire un clique pour passer de blanc à noir et inversemment. Il est possible de relancer le programme pour avoir une nouvelle image.
 
 
-<iframe rc="https://webtigerjython.ethz.ch/" width="100%" height="600"></iframe>
+<iframe src="https://brython.info/gallery/phaser.html" width="100%" height="600"></iframe>
 
 :::
 
@@ -417,61 +418,61 @@ Les bonnes réponses étaient
 10. (B)
 ##### Explications
 1. 
-```{figure} imgs/exo/1/1_right.png
+```{figure} imgs/exo/bw/1/1_wrong_explain.png
 ---
 width: 200
 ---
 ```
 2. 
-```{figure} imgs/exo/1/2_right.png
+```{figure} imgs/exo/bw/1/2_wrong_explain.png
 ---
 width: 200
 ---
 ```
 3. 
-```{figure} imgs/exo/1/3_right.png
+```{figure} imgs/exo/bw/1/3_wrong_explain.png
 ---
 width: 200
 ---
 ```
 4. 
-```{figure} imgs/exo/1/4_right.png
+```{figure} imgs/exo/bw/1/4_wrong_explain.png
 ---
 width: 200
 ---
 ```
 5. 
-```{figure} imgs/exo/1/5_right.png
+```{figure} imgs/exo/bw/1/5_wrong_explain.png
 ---
 width: 200
 ---
 ```
 6. 
-```{figure} imgs/exo/1/6_right.png
+```{figure} imgs/exo/bw/1/6_wrong_explain.png
 ---
 width: 200
 ---
 ```
 7. 
-```{figure} imgs/exo/1/7_right.png
+```{figure} imgs/exo/bw/1/7_wrong_explain.png
 ---
 width: 200
 ---
 ```
 8. 
-```{figure} imgs/exo/1/8_right.png
+```{figure} imgs/exo/bw/1/8_wrong_explain.png
 ---
 width: 200
 ---
 ```
 9. 
-```{figure} imgs/exo/1/9_right.png
+```{figure} imgs/exo/bw/1/9_wrong_explain.png
 ---
 width: 200
 ---
 ```
 10. 
-```{figure} imgs/exo/1/10_right.png
+```{figure} imgs/exo/bw/1/10_wrong_explain.png
 ---
 width: 200
 ---
