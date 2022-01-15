@@ -12,4 +12,4 @@ Pour qu'un site web fonctionne, il a besoin de deux choses :
 
 En se connectant à un site web pour la première, l'ordinateur met souvent plus de temps que les fois prochaines. L'ordinateur va en fait garder certaines informations du site en mémoire pour la prochaine fois qu'il se connectera à ce dernier, cela permet de se connecter plus rapidement.
 
-Si le site est un réseau social, ce dernier va garder en mémoire toutes les informations, y compris celle qui ont été supprimées. Toutes ces données prennent vite de la place et les mastodontes du web possède des milliers de serveurs pour pouvoir toutes les contenir. Comme tous ces fichiers ne sont pas du même type, il est possible de voir lesquelles sont les plus utilisés 
+Si le site est un réseau social, ce dernier va garder en mémoire toutes les informations, y compris celle qui ont été supprimées. Toutes ces données prennent vite de la place et les mastodontes du web possède des milliers de serveurs pour pouvoir toutes les contenir. Comme tous ces fichiers ne sont pas du même type, il est possible de voir lesquelles sont les plus utilisés. 

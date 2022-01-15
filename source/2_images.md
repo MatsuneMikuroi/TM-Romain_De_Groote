@@ -400,6 +400,10 @@ Cette série d'exercice varie selon si le script est en version papier ou en ver
 Pour cette série d'exercice, vous aurez besoin d'une feuille cadrillée ainsi que de quoi écrire. Pour chacune des images qui suiveront, vous devrez effectuer leur conversion avec le facteur donné.
 ```
 
+Jusqu'à présent, la compression d'image à été abordé très visuellement. Néanmoins, cela n'est faisable uniquement avec des images en noir et blanc, car dès que des nuances de gris apparraissent, il devient difficile de déterminer la nuance à appliquer. C'est pour cela que désormais les images seront affichées de deux façons: l'image en tant que telle et l'image représenté en une matrice de pixels. Pour reprendre l'exemple de l'image des montagnes, on obtiendrait ceci:
+```{figure} imgs/mountains/32x32.png
+```
+#### Série d'exercices 3
 
 ## Solution des exercices
 ### Images en noir et blanc

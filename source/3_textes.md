@@ -1,5 +1,5 @@
 # La compression de textes
 
-## Exercices
+## Théorie
 ## Solutions des exercices
 ## Explications des algorithmes
