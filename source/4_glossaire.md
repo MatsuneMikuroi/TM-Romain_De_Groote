@@ -2,6 +2,9 @@
 Adresse IP (Internet Protocol):
 Numéro unique attribué, de façon provisoire ou définitive, aux systèmes (ordinateur, imprimante, smartphone, etc) connecté à un réseau pour permettre la communicaton entre-eux. 
 
+Algorithme:
+Suite finie d'opérations permettant d'effectuer une tâche précise.
+
 DNS (Domain Name System):
 Service permettant de traduire les noms de domaine en adresse IP. 
 

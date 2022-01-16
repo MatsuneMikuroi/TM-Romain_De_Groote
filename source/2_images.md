@@ -3,7 +3,7 @@ L'objectif de ce chapitre va-t-être d'enseigner le principe de la compression d
 :::{raw} Latex
 Les élèves ont également un corrigé détaillé en fin de chapitre concernant les exercices inclus dans le script.
 :::
-Nous nous attarderons en premier temps sur la compression d'images par réduction de résolution avant de s'attaquer à la compression par identifiacation de paternes.
+Nous nous attarderons en premier temps sur la compression d'images par réduction de résolution avant de s'attaquer à la compression par identifiacation de patterns.
 
 La compression par réduction de résolution vise à réduire le nombre de pixels qui composent une image. En le réduisant, l'image prendra moins de place. Pour cette première partie, les formats PBM, PGM et PPM seront utilisé car très visuel et basique. Ils est possible de convertir les images sous ces formats en fichiers textes et celles-ci sont codées de la manière suivante: 
 * L'indication du format (P1 pour un fichier PBM en ASCII et P4 en binaire, P2 pour un fichier PGM en ASCII et P5 en binaire, enfin P3 pour un fichier PPM en ASCII et P& en binaire).
@@ -14,18 +14,18 @@ La compression par réduction de résolution vise à réduire le nombre de pixel
 
 Pour le format PBM, la valeur '1' indique que le pixel est noir alors que la valeur '0' indique qu'il est blanc. Concernant le PGM, les différentes nuances de grise sont comprises entre '0' et '15' où '0' correspond au noir et '15' au blanc. Finalement, le PPM code chaque pixel en valeur RGB, donc '255 0 0' donne du rouge, '0 255 0' du vet et '0 0 255' du bleu.
 
-Dans la théore, nous allons commencé avec le compression en noir et blanc car elle permet de facillement imager le tout. Les pixels après compresions étant alors soit noir soit blanc. Deux séries d'exercices permettrons ensuite à l'élève de s'entrainer. Il devra dans un premier temps choisir entre deux images et choisir laquelle des deux est issu de la compression d'un modèle, dans la deuxième série une image lui sera montrer et l'élève devra par lui même effetuer la compression. Suite à ces premiers exercices, les couleurs seront petit à petit délaissées au profit des valeurs numériques. Des exercices semblablent aux deux premières séries seront proposés avant de passer à la compression en nuances de gris. À partir de là, les séries se répèteront, le type d'exercice ne variant que très peu, néanmoins la difficulté sera croissante. La dernière partie se consacrera à la compression d'image en couleurs. La difficulté supplémetaire sera de vérifier les trois valeurs RGB. Après avoir fini la compression par réduction de résolution, nous passeront à la compression par identifiction de paternes.
+Dans la théorie, nous allons commencé avec par compression en noir et blanc car elle permet de facillement imager le tout. Les pixels après compresions étant alors soit noir soit blanc. Deux séries d'exercices permettrons ensuite à l'élève de s'entrainer. Il devra dans un premier temps choisir entre deux images et choisir laquelle des deux est issu de la compression d'un modèle, dans la deuxième série une image lui sera montrer et l'élève devra par lui même effetuer la compression. Suite à ces premiers exercices, les couleurs seront petit à petit délaissées au profit des valeurs numériques. Des exercices semblablent aux deux premières séries seront proposés avant de passer à la compression en nuances de gris. À partir de là, les séries se répèteront, le type d'exercice ne variant que très peu, néanmoins la difficulté sera croissante. La dernière partie se consacrera à la compression d'image en couleurs. La difficulté supplémetaire sera de vérifier les trois valeurs RGB. Après avoir fini la compression par réduction de résolution, nous passeront à la compression par identifiction de patterns.
 
-Cette dernière va permettre de passer de la compression d'images à la compression de texte. Ce chapitre aussi beaucoup plus court que le premier. Il ne contiendra qu'un peu de théorie et une série d'exercice, mélant des images en noir/blanc, nuances de gris et couleurs.
+Cette dernière va permettre de passer de la compression d'images à la compression de texte. Ce chapitre aussi beaucoup plus court que le premier. Il ne contiendra qu'un peu de théorie et une série d'exercice, mélangeant des images en noir/blanc, nuances de gris et couleurs.
 
-## Théorie
+## La réduction de résolution
 ### Représentation des images
 Avant de commencer à s'attquer à la compression pure, il est bon de comprendre la manière dont l'ordinateur représente des images.
 
 
 De nos jours, tout a été numérisé. Or, contrairement à une photo prise par un appareil polaroid, qui reproduit exactement la réalité, l’ordinateur est limité dans sa représentation des images. Il ne peut pas exemple par dessiner de cercle. Cela est dû au fait que pour afficher quelque chose, l’ordinateur allume des minuscules leds formant une matrice rectangulaire. Il est d’ailleurs possible, suivant votre niveau de vue, de les distinguer si vous êtes sur ordinateur. Sinon, voici une image dont les carrés sont respectivement de 64, 32, 16, 8, 4, 2 et 1 pixels.
 
-```{figure} imgs/pixel.png
+```{figure} imgs/exemples/pixel.png
 :alt:
 Le point bleu minuscule sur l'écran est de 1px*1px. Cette image est surtout utile si le script est en version informatique.
 ```
@@ -417,6 +417,18 @@ Cette série d'exercices varie selon si le script est en version papier ou en ve
 ```{admonition} Consigne
 Pour cette série d'exercices, vous aurez besoin d'une feuille cadrillée ainsi que de quoi écrire. Pour chacune des images qui suivront, vous devrez effectuer leur conversion avec le facteur donné.
 ```
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+
+
 
 Jusqu'à présent, la compression d'image à été abordé très visuellement. Néanmoins, cela n'est faisable uniquement avec des images en noir et blanc, car dès que des nuances de gris apparraissent, il devient difficile de déterminer la nuance à appliquer. C'est pour cela que désormais les images seront affichées de deux façons: l'image en tant que telle et l'image représenté en une matrice de pixels. Pour reprendre l'exemple de l'image des montagnes, on obtiendrait ceci:
 ```{figure} imgs/mountains/32x32.png
@@ -431,12 +443,58 @@ width: 200
 ---
 Image "vue" par l'ordinateur.
 ```
+
+Il est possbile de voir que l'ordinateur 
 #### Série d'exercices 3
 
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+
+## Indentification de patterns
+Une autre méthode pour comprimer des données est d'identifier un pattern strict et de dire combien de fois ce dernier se répète. Reprenons notre exemple habituel en affichant une grille.
+```{figure} imgs/mountains/32x32_grid.png
+```
+Chaque carreau contient 2 pixels, ce qui va nous aidez à compter. Par exemple, la première ligne est composée de 26 pixels blancs, codés *0*, et 6 pixels noirs, codés *1*. Il est possible de choisir un charactère qui n'est normalement pas afficher pour indiquer une multiplication. Choisissons la lettre *x* qui n'apparait normalement pas dans ce format. Il est possible de coder la première ligne
+        26x0 6x1
+L'ordinateur vas alors dessiner 26 pixels blancs avant d'en dessiner 6 noirs. Cette méthode est très utile lorsque le fond de l'image est uniforme. Dans notre exemple, l'ordinateur utilise au final 8 caractères au lieu de 32 pour coder la première ligne. Cela fait quand même 4 fois moins d'espace. 
+
+### Série d'exercices 1
+:::{admonition} Consigne
+ Dans cette unique série d'exercices de ce chapitre, une image quadrillé vous sera montré et vous devrez la comprimer en identifiant les patterns qui la compose. Les images seront issus des exercices précédents.
+:::
+:::{raw} html
+<iframe src="https://brython.info/gallery/phaser.html" width="100%" height="600"></iframe>
+:::
+
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+11. 
+12. 
+13. 
+14. 
+15. 
+
 ## Solution des exercices
-### Images en noir et blanc
-#### Série d'exercices 1
-##### Réponses
+### Réduction de résolution
+#### Images en noir et blanc
+##### Série d'exercices 1
+###### Réponses
 Les bonnes réponses étaient
 1. (B)
 2. (A)
@@ -448,7 +506,7 @@ Les bonnes réponses étaient
 8. (B)
 9. (A)
 10. (B)
-##### Explications
+###### Explications
 1. 
 ```{figure} imgs/exo/bw/1/1_wrong_explain.png
 ---
@@ -509,15 +567,112 @@ width: 200
 width: 200
 ---
 ```
-#### Série d'exercices 2
+##### Série d'exercices 2
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
 
-#### Série d'exercices 3
+##### Série d'exercices 3
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
 
-### Images en nuances de gris
+##### Série d'exercices 4
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+
+#### Images en nuances de gris
+##### Série d'exercices 1
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+
+##### Série d'exercices 2
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+
+#### Images en couleur
+##### Série d'exercices 1
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+
+##### Série d'exercices 2
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+
+
+### Identification de patterns
 #### Série d'exercices 1
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+11. 
+12. 
+13. 
+14. 
+15. 
 
-### Images en couleur
-#### Série d'exercices 1
+
 
 ## Explications des algorithmes
  :::{admonition} Prérequis
@@ -526,6 +681,15 @@ class: attention
 ---
 Pour comprendre le fonctionnement des algorithmes suivants, il est conseillé d'avoir quelques connaissances sur le fonctionnement et les manipulations des listes en python.
 :::
+
+### Lecture des images
+Dans ce chapitre,  les images utilisés sont sous format PBM, PGM et PPM. Ces formats ont deux particulartié intéresantes:
+1. Il est possible de les transformer en fichier *.txt* juste en les renommant.
+2. Ces fichiers *.txt* se présentent sous la forme suivante:
+```{figure} imgs/exemples/txt.png
+Fichier PBM mis en fichier texte.
+```
+Il est visible de voir, comme expliqué dans le cours, que la valeur des pixels est indiqué tel quel, sous la forme de liste. 
 ### Inversion des coordonnées
 Pour la compression d’images, il a fallu commencer par une restructuration des listes. En effet dans le langage courant, nous lisons les informations de gauche à droite et de haut en bas, or, lorsque nous soutirons une image sous forme de liste de listes de pixels, l’ordinateur nous renvoi une liste qui se lit de haut en bas et de gauche à droite.
 
