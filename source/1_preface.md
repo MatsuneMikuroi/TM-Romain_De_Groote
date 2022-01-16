@@ -11,6 +11,7 @@ Pour stocker ces informations, les systèmes informatiques utilisent diverses me
 
 Les stockages mémoires sont de deux types ROM (memoire morte ou figée) et RAM (memoire vive ou volatile).
 Les suppors de masses ont évolué depuis les années 1970: cates perforées, bandes magnetiques, diquettes, disques dur, clefs USB, etc...
+L'espace de stockage étant physique limité, il est très vite apparu la nécessité de compresser les données.
 
 
 #### *Néanmoins, comment cela se passe pour les données en ligne ?*
