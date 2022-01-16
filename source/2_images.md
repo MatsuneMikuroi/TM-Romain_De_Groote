@@ -1,4 +1,5 @@
 # La compression d'images
+## Objectifs
 L'objectif de ce chapitre va-t-être d'enseigner le principe de la compression d'image au travers d'exercices.
 :::{raw} Latex
 Les élèves ont également un corrigé détaillé en fin de chapitre concernant les exercices inclus dans le script.
@@ -404,16 +405,16 @@ Cette série d'exercices permet de mettre entre autre une chose en avant: La com
 Cette série d'exercices varie selon si le script est en version papier ou en version web. Dans les deux cas des solutions seront proposées aux élèves. Néanmoins, la version web étant automatisée, la correction sera plus terre-à-terre.
 :::
 
-:::{raw} html
+::::{raw} html
 
-:::{tip}
- Dans cette deuxième série d'exercices, vous allez pouvoir vous entrainez sur l'ordinateur directement. La fenêtre d'exécution en dessous, une fois lancée, vous montrera une image et vous devrez la compresser. Vous n'avez qu'à faire un clic pour passer de blanc à noir et inversemment. Il est possible de relancer le programme pour avoir une nouvelle image.
-
+```{admonition} Conseil
+Dans cette deuxième série d'exercices, vous allez pouvoir vous entrainez sur l'ordinateur directement. La fenêtre d'exécution en dessous, une fois lancée, vous montrera une image et vous devrez la compresser. Vous n'avez qu'à faire un clic pour passer de blanc à noir et inversemment. Il est possible de relancer le programme pour avoir une nouvelle image.
+```
 
 <iframe src="https://brython.info/gallery/phaser.html" width="100%" height="600"></iframe>
 
-:::
-
+::::
+:::{raw} latex
 ```{admonition} Consigne
 Pour cette série d'exercices, vous aurez besoin d'une feuille cadrillée ainsi que de quoi écrire. Pour chacune des images qui suivront, vous devrez effectuer leur conversion avec le facteur donné.
 ```
@@ -427,10 +428,10 @@ Pour cette série d'exercices, vous aurez besoin d'une feuille cadrillée ainsi 
 8. 
 9. 
 10. 
+:::
 
 
-
-Jusqu'à présent, la compression d'image à été abordé très visuellement. Néanmoins, cela n'est faisable uniquement avec des images en noir et blanc, car dès que des nuances de gris apparraissent, il devient difficile de déterminer la nuance à appliquer. C'est pour cela que désormais les images seront affichées de deux façons: l'image en tant que telle et l'image représenté en une matrice de pixels. Pour reprendre l'exemple de l'image des montagnes, on obtiendrait ceci:
+Jusqu'à présent, la compression d'images a été abordé très visuellement. Néanmoins, cela n'est faisable uniquement avec des images en noir et blanc, car dès que des nuances de gris apparraissent, il devient difficile de déterminer la nuance à appliquer. C'est pour cela que désormais les images seront affichées de deux façons: l'image en tant que telle et l'image représenté en une matrice de pixels. Pour reprendre l'exemple de l'image des montagnes, on obtiendrait ceci:
 ```{figure} imgs/mountains/32x32.png
 ---
 width: 200
@@ -444,8 +445,27 @@ width: 200
 Image "vue" par l'ordinateur.
 ```
 
-Il est possbile de voir que l'ordinateur 
+Il est possbile de voir que l'ordinateur représente les pixels blancs par des *0* et les pixels noirs par des *1*
+:::{admonition} Format utilisé
+---
+class: attention
+---
+Toute la théorie concernant la façon dont l'ordinateur représente les images n'est applicable qu'au fichiers PBM, PGM et PPM (mêmes si ils de légèrent variations). Ces formats ont été retenu car la majorité des formats d'images ont leur propre manière de les stocker et coder. L'avantage des format PBM/PGM/PPM est qu'ils sont très peu comprimés mais très compréhensibles pour des néophyte. Ceux-ci représentant les pixels par des valeurs uniquement numériques et laissant facilement apparaître les images.
+:::
+
 #### Série d'exercices 3
+:::{admonition} Consigne
+ Cette troisième série d'exercices ressemble à la première. Une image vous sera montrée, vous devrez ensuite choisir entre deux versions compressées de cette image. Le facteur de compression sera toujours indiqué en dessous de la première image.
+:::
+:::{admonition} Règle de compression
+---
+class: attention
+---
+Pour tous les exercices de cette série, c'est la règle suivante qui s'applique:
+
+        Si >=2/4 px sont noir -> nouveau pixel noir
+:::
+
 
 1. 
 2. 
@@ -458,9 +478,11 @@ Il est possbile de voir que l'ordinateur
 9. 
 10. 
 
+Les co
+
 ## Indentification de patterns
 Une autre méthode pour comprimer des données est d'identifier un pattern strict et de dire combien de fois ce dernier se répète. Reprenons notre exemple habituel en affichant une grille.
-```{figure} imgs/mountains/32x32_grid.png
+```{figure} imgs/mountains/32x32_gride.png
 ```
 Chaque carreau contient 2 pixels, ce qui va nous aidez à compter. Par exemple, la première ligne est composée de 26 pixels blancs, codés *0*, et 6 pixels noirs, codés *1*. Il est possible de choisir un charactère qui n'est normalement pas afficher pour indiquer une multiplication. Choisissons la lettre *x* qui n'apparait normalement pas dans ce format. Il est possible de coder la première ligne
         26x0 6x1
@@ -473,6 +495,7 @@ L'ordinateur vas alors dessiner 26 pixels blancs avant d'en dessiner 6 noirs. Ce
 :::{raw} html
 <iframe src="https://brython.info/gallery/phaser.html" width="100%" height="600"></iframe>
 :::
+
 
 1. 
 2. 
@@ -490,7 +513,12 @@ L'ordinateur vas alors dessiner 26 pixels blancs avant d'en dessiner 6 noirs. Ce
 14. 
 15. 
 
-## Solution des exercices
+
+
+## Conclusion
+Pour conclure ce chapitre, il est important de retenir que les images vont en vérité être comprimer de manière quasi-systématique. Comme il s'agit de l'une des principales informations, étant aussi à la base des vidéos, il est important que ces dernières ne remplissent pas l'intégralité de l'espace de stockage que nous possèdons. Les allégées permets aussi de se les échanger plus rapidement. Néanmoins, une image comprimée ne va pas forcément perdre de sa qualité. Il existe, en plus des deux types de compressions abordés, une troisième manière de comprimer les images, celle-ci visant à baisser le nombre de couleur qu'il est possible d'afficher.
+
+## Solutions des exercices
 ### Réduction de résolution
 #### Images en noir et blanc
 ##### Série d'exercices 1

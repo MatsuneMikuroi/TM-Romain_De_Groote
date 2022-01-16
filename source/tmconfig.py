@@ -1,6 +1,6 @@
 class TMConfig:
 
-    title = u"Initiation à la compression de données (images et textes)"
+    title = u"Cours d'introduction à la compression de données (images et textes)"
     first_name = 'Romain'
     last_name = 'De Groote'
     author = f'{first_name} {last_name}'

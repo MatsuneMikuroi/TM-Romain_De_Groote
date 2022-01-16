@@ -3,7 +3,7 @@
     You can adapt this file completely to your liking, but it should at least
     contain the root `toctree` directive.
 
-Initiation à la compression de données (images et textes)
+Cours d'introduction à la compression de données (images et textes)
 ============================
 
 ..  toctree::
