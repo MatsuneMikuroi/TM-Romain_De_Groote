@@ -1,22 +1,40 @@
 # La compression d'images
-L'objectif de ce chapitre va-t-être d'enseigner le principe de la compression d'image au travers d'exercices présents dans ce script et qui peuvent être complétés par d'autre trouvable dans le dossier de travail. Les élèves ont également un corrigé détaillé en fin de chapitre concernant les exercices inclus dans le script.
+L'objectif de ce chapitre va-t-être d'enseigner le principe de la compression d'image au travers d'exercices.
+:::{raw} Latex
+Les élèves ont également un corrigé détaillé en fin de chapitre concernant les exercices inclus dans le script.
+:::
+Nous nous attarderons en premier temps sur la compression d'images par réduction de résolution avant de s'attaquer à la compression par identifiacation de paternes.
+
+La compression par réduction de résolution vise à réduire le nombre de pixels qui composent une image. En le réduisant, l'image prendra moins de place. Pour cette première partie, les formats PBM, PGM et PPM seront utilisé car très visuel et basique. Ils est possible de convertir les images sous ces formats en fichiers textes et celles-ci sont codées de la manière suivante: 
+* L'indication du format (P1 pour un fichier PBM en ASCII et P4 en binaire, P2 pour un fichier PGM en ASCII et P5 en binaire, enfin P3 pour un fichier PPM en ASCII et P& en binaire).
+* Le nombre de colonnes de pixels dans l'images (toujours sous la forme d'un nombre ASCII).
+* Le nombre de ligne de pixels dans l'images (toujours sous la forme d'un nombre ASCII).
+* L'image codée ligne par ligne
+* Toute ligne commençant par '#' est perçu comme un commentaire
+
+Pour le format PBM, la valeur '1' indique que le pixel est noir alors que la valeur '0' indique qu'il est blanc. Concernant le PGM, les différentes nuances de grise sont comprises entre '0' et '15' où '0' correspond au noir et '15' au blanc. Finalement, le PPM code chaque pixel en valeur RGB, donc '255 0 0' donne du rouge, '0 255 0' du vet et '0 0 255' du bleu.
+
+Dans la théore, nous allons commencé avec le compression en noir et blanc car elle permet de facillement imager le tout. Les pixels après compresions étant alors soit noir soit blanc. Deux séries d'exercices permettrons ensuite à l'élève de s'entrainer. Il devra dans un premier temps choisir entre deux images et choisir laquelle des deux est issu de la compression d'un modèle, dans la deuxième série une image lui sera montrer et l'élève devra par lui même effetuer la compression. Suite à ces premiers exercices, les couleurs seront petit à petit délaissées au profit des valeurs numériques. Des exercices semblablent aux deux premières séries seront proposés avant de passer à la compression en nuances de gris. À partir de là, les séries se répèteront, le type d'exercice ne variant que très peu, néanmoins la difficulté sera croissante. La dernière partie se consacrera à la compression d'image en couleurs. La difficulté supplémetaire sera de vérifier les trois valeurs RGB. Après avoir fini la compression par réduction de résolution, nous passeront à la compression par identifiction de paternes.
+
+Cette dernière va permettre de passer de la compression d'images à la compression de texte. Ce chapitre aussi beaucoup plus court que le premier. Il ne contiendra qu'un peu de théorie et une série d'exercice, mélant des images en noir/blanc, nuances de gris et couleurs.
+
 ## Théorie
 ### Représentation des images
-Avant de commencer de s'attquer à la compression pure, il est bon de comprendre la manière dont l'ordinateur représente des images.
+Avant de commencer à s'attquer à la compression pure, il est bon de comprendre la manière dont l'ordinateur représente des images.
 
 
-De nos jours, tout a été numérisé. Or, contrairement à une photo prise par un appareil polaroid, qui reproduit exactement la réalité, l’ordinateur est limité dans sa représentation des images. Il ne peut par exemple par dessiner de cercle. Cela est dû au fait que pour afficher quelque chose, l’ordinateur allume des minuscules leds. Il est d’ailleurs possible, suivant votre niveau de vue, de les distinguer si vous êtes sur ordinateur. Sinon, voici une image dont les carrés sont de respectivement 64, 32, 16, 8, 4, 2 et 1 pixels.
+De nos jours, tout a été numérisé. Or, contrairement à une photo prise par un appareil polaroid, qui reproduit exactement la réalité, l’ordinateur est limité dans sa représentation des images. Il ne peut pas exemple par dessiner de cercle. Cela est dû au fait que pour afficher quelque chose, l’ordinateur allume des minuscules leds formant une matrice rectangulaire. Il est d’ailleurs possible, suivant votre niveau de vue, de les distinguer si vous êtes sur ordinateur. Sinon, voici une image dont les carrés sont respectivement de 64, 32, 16, 8, 4, 2 et 1 pixels.
 
 ```{figure} imgs/pixel.png
 :alt:
 Le point bleu minuscule sur l'écran est de 1px*1px. Cette image est surtout utile si le script est en version informatique.
 ```
- C’est donc à cause de cette façon d’afficher les images qu’il est impossible de demander à l’ordinateur d’afficher de cercle, néanmoins, il est possible de lui demander de créer un polygone ressemblant fortement à un cercle. Voici un exemple :
+ C’est donc à cause de cette façon de représenter les information qu'il lui est impossible  d'afficher de cercle. Néanmoins, il est possible de lui demander de créer un polygone ressemblant fortement à un cercle. Voici un exemple :
 
 ```{figure} imgs/circle/512x512.png
 Représentation d'un cercle dans un carré de 512px*512px.
 ```
-Le cercle ci-dessus à un diamètre de 512 pixels, l'image ayant une haute résolution, la forme nous apparait comme un cercle. Qu'est-ce qu'il se passerait maintenant si la taille de  l'image était réduite ? Diminuons sa taille par un facteur 2.
+Le cercle ci-dessus à un diamètre de 512 pixels, l'image ayant une haute résolution, la forme nous apparait comme un cercle. Que se se passerait-il maintenant si la taille de  l'image était réduite ? Diminuons sa taille par un facteur 2.
 
 ```{figure} imgs/circle/256x256.png
 ---
@@ -32,7 +50,7 @@ width: 256
 ---
 Représentation d'un cercle dans un carré de 128px*128px.
 ```
-Il devient maintenant plus évident que ce qui ressemblait à un cercle commence à devenir un polygone avec un très grand nombre de côté. Le haut semble commencer à s'aplatir. Si l'on continue cela nous donne les résultats suivants:
+Il devient maintenant plus évident que ce qui ressemblait à un cercle commence à devenir un polygone avec un très grand nombre de côté. Le haut semble commencer à s'applatir. Si l'on continue cela nous donne les résultats suivants:
 
 ```{figure} imgs/circle/64x64.png
 ---
@@ -60,7 +78,7 @@ width: 256
 ---
 Représentation d'un cercle dans un carré de 8px*8px.
 ```
-Désormais, l'image semble plus représenter un polygone quelconque qu'un cercle, ceci nous fixe une limite : arriver à un certain stade, une image trop comprimer peut perdre des détails essentiels à sa compréhension.
+Désormais, l'image semble plus représenter un polygone quelconque qu'un cercle, ceci nous fixe une limite : arriver à un certain stade, une image trop comprimée peut perdre des détails essentiels à sa compréhension.
 
 ```{figure} imgs/circle/4x4.png
 ---
@@ -68,7 +86,7 @@ width: 256
 ---
 Représentation d'un cercle dans un carré de 4px*4px.
 ```
-Pour cette avant dernière image, il n'est plus possible de répertorier cette figure comme un cercle, l'information original a entièrement été perdu.
+Pour cette avant dernière image, il n'est plus possible de répertorier cette figure comme un cercle, l'information originale a entièrement été perdue.
 
 ```{figure} imgs/circle/2x2.png
 ---
@@ -78,7 +96,7 @@ Représentation d'un cercle dans un carré de 2px*2px.
 ```
 Enfin, l'image à tellement été comprimé qu'il ne reste que du noir. La seule information qu'il est alors possible de supposer est que la couleur principale de l'image était le noir.
 
-Cette petite expérience permet de démontrer qu'il n'est pas possible de réellement représenter des courbes sur un écran d'ordinateur. En effet, si cela était possible il n'y aurait pas eu de déformation du cercle, et il aurait toujours été possible d'en voir en dans une image de 2 pixels par 2 pixels.
+Cette petite expérience permet de démontrer qu'il n'est pas possible de réellement représenter des courbes sur un écran d'ordinateur. En effet, si cela était possible, il n'y aurait pas eu de déformation du cercle, et il aurait toujours été possible d'en voir un dans une image de 2 pixels par 2 pixels.
 
 ### Images en noir et blanc
 Maintenant, il est possible de se demander comment l'ordinateur a perdu ces détails. Lorsque l'on réduit la taille d'une image, l'ordinateur va chercher quels sont les pixels les moins importants. Prenons l'exemple d'une photo d'un paysage montagneux pour comprendre.
@@ -89,7 +107,7 @@ class: with border
 ---
 Paysage en 32px*32px.
 ```
-Il est possible de voir plusieurs choses sur cette image. Un soleil dans le coin supérieur droit, des montagnes en arrière-plan, des oiseaux volants au-dessus des montagnes et enfin un autre astre centré en haut. On va maintenant demander à l'ordinateur de réduire la taille de l'image par 2 en appliquant la règle de compression suivante:
+Il est possible de voir plusieurs choses sur cette image. Un soleil dans le coin supérieur droit, des montagnes en arrière-plan, des oiseaux volant au dessus des montagnes et enfin un autre astre centré en haut. On va maintenant demander à l'ordinateur de réduire la taille de l'image par 2 en appliquant la règle de compression suivante:
 
         Si >=2/4 px sont noir -> nouveau pixel noir
 
@@ -101,14 +119,14 @@ class: with border
 ---
 Paysage en 16px*16px.
 ```
-L'idée de l'image reste là, néanmoins les détails ont été perdu. Pourquoi ? Les oiseaux devraient encore être visibles, du moins en partie car ceux étaient représenté dans un rectangle de 3 pixels de long par 2 de haut. Même chose pour l'astre présent dans le ciel, il faisait 2 pixels de côté. Alors pourquoi tous ces détails ont-ils disparus ? La faute n'est pas à reprocher à l'ordinateur mais à pas-de-bol. Reprenons notre première image mais cette fois-ci mettons lui un cadrillage de 2px*2px dessus.
+L'idée de l'image reste là, néanmoins les détails ont été perdu. Pourquoi ? Les oiseaux devraient encore être visibles, du moins en partie, car ils étaient représentés dans un rectangle de 3 pixels de long par 2 de haut. Même chose pour l'astre présent dans le ciel, il faisait 2 pixels de côté. Alors pourquoi tous ces détails ont-ils disparu ? La raison est la logique utilisée pour réduire l'image. Reprenons notre première image mais cette fois-ci mettons lui un cadrillage de 2px*2px dessus.
 
 ```{figure} imgs/mountains/32x32_gride.png
 ---
 class: with border
 ---
 ```
-L’ordinateur va à chaque fois regarder les quatre pixels présents dans chaque carré rouge et y applique la règle de compression énoncée précédemment. Il apparaît que les oiseaux sont malheureusement à chaque fois sur trois groupes différents, ce qui explique leur disparition. Concernant l’astre, ce dernier se trouve sur l’intersection de 4 carrés, ne représentant constamment qu’un pixel sur quatre, il disparait lui aussi.
+L’ordinateur va à chaque fois regarder les quatre pixels présents dans chaque carré rouge et y applique la règle de compression énoncée précédemment. Il apparaît que les oiseaux sont malheureusement à chaque fois sur trois groupes différents, ce qui explique leurs disparitions. Concernant l’astre, ce dernier se trouve sur l’intersection de 4 carrés, ne représentant constamment qu’un pixel sur quatre, il disparait lui aussi. Si l'image était décallée de ne serait-ce qu'un seul pixel sur la gauche ou la droite, l'astre serait apparu, de même que si elle avait été décallée d'un pixel vers le haut ou le bas, l'astre serait visible et cette fois-ci les oiseaux aussi.
 
 Mais reprenons notre image en 16px*16px, que se passe-t-il si l'on continue de la comprimer ?
 
@@ -118,7 +136,7 @@ class: with border
 ---
 Paysage en 8px*8px.
 ```
-Comme avec le cercle, on arrive à un stade où la perte d'information devient trop grande. Avec une connaissance de l'image d'origine il est possible d'encore se la représenter, mais sans cela est tout bonnement impossible.
+Comme avec le cercle, on arrive à un stade où la perte d'information devient trop grande. Avec une connaissance de l'image d'origine, il est encore possible de se la représenter, mais sans cela, c'est tout bonnement impossible.
 
 ```{figure} imgs/mountains/black/4x4.png
 ---
@@ -126,7 +144,7 @@ class: with border
 ---
 Paysage en 4px*4x.
 ```
-Arrivée à ce stade, l'image n'est même plus imaginable. Aucune réelle information peut en être tirée.
+Arrivée à ce stade, l'image n'est même plus reconnaissable. Aucune réelle information ne peut en être tirée.
 
 ```{figure} imgs/mountains/black/2x2.png
 ---
@@ -134,7 +152,7 @@ class: with border
 ---
 Paysage en 2px*2px.
 ```
-L’image désormais semble révélé qu’il y avait une grande structure dans la partie inférieure de l’image, ce qui correspond aux montagnes. Néanmoins cette information est erronée et ce que le dernier stade de la compression va nous révéler.
+L’image désormais semble révélé qu’il y avait une grande structure dans la partie inférieure de l’image, ce qui correspond aux montagnes. Néanmoins cette information est erronée et c'est ce que le dernier stade de la compression va nous révéler.
 
 ```{figure} imgs/mountains/black/1x1.png
 ---
@@ -142,7 +160,7 @@ class: with border
 ---
 Paysage en 1px*1px.
 ```
-Comme pour le cercle, on se retrouve avec une image finale entièrement noire. Cela est dû à la présence des montagnes dans la partie inférieure. Mais quel est le problème alors ? Reprenons notre image de départ et comparons là avec celle-ci
+Comme pour le cercle, on se retrouve avec une image finale entièrement noire. Cela est dû à la présence des montagnes dans la partie inférieure. Mais quel est le problème alors ? Reprenons notre image de départ et comparons là avec celle-ci.
 
 ```{figure} imgs/mountains/32x32.png
 ---
@@ -150,7 +168,7 @@ class: with border
 ---
 Image originale.
 ```
-L'image originale est majoritairement blanche, le noir ne fait que dessiner la forme des montagnes, cependant, ces contours sont suffisants pour petit à petit le faire devenir majoritaire. Dans ce cas-là, la compression à tellement dégradé l'image qu'elle en à inverser les proportions des couleurs.
+L'image originale est majoritairement blanche, le noir ne fait que dessiner la forme des montagnes, cependant, ces contours sont suffisants pour petit à petit le faire devenir majoritaire. Dans ce cas-là, la compression a tellement dégradé l'image qu'elle en a inversé les proportions des couleurs.
 
 Essayons désormais en changeant la règle de compression.
 
@@ -163,7 +181,7 @@ class: with border
 ---
 Première compression avec la nouvelle règle. (16px*16px)
 ```
-Ce changement, bien qu'infime, vient pratiquement de faire disparaître l'image en sa totalité. Cela est du fait que la majorité des pixels noirs sur la première image provenaient de groupe de pixels souvent à la limite du critère d'acceptabilité de la règle.
+Ce changement, bien qu'infime, vient pratiquement de faire disparaître l'image en sa totalité. Cela est dû au fait que la majorité des pixels noirs sur la première image provenait de groupes de pixels souvent à la limite du critère d'acceptabilité de la règle.
 ```{figure} imgs/mountains/32x32_gride.png
 ---
 class: with border
@@ -171,17 +189,17 @@ class: with border
 Avec la vue que nous permet le cadrillage, il devient assez vite compréhensible de ces raisons.
 ```
 
- Et c'est là l'un des défis de la compression de données: développer des algorithmes qui vont comprimer les images de manières à ce qu'elles prennent le moins de place possible tout en gardant un maximum d'éléments essentiels. Et ce qui est entendu par éléments essentiels change en fonction du contexte. Un fond d'écran va demander une image avec une très haute résolution et donc assez lourde, alors qu'un memes partager sur les réseaux sociaux aura tendance à avoir une résolution plus faible car plus l'image est légère, moins elle prendra de temps à charger et d'espace dans les serveurs de l'entreprise derrière.
+ Et c'est là l'un des défis de la compression de données: développer des algorithmes qui vont comprimer les images de manière à ce qu'elles prennent le moins de place possible tout en gardant un maximum d'éléments essentiels. Et ce qui est entendu par éléments essentiels change en fonction du contexte. Un fond d'écran va demander une image avec une très haute résolution et donc assez lourde, alors qu'un mème partager sur les réseaux sociaux aura tendance à avoir une résolution plus faible, car plus l'image est légère, moins elle prendra de temps à charger et d'espace dans les serveurs de l'hebergeur des données.
 
  #### Série d'exercices 1
  :::{admonition} Consigne
- Dans cette première série d'exercices, une image vous sera montrer, vous devrez ensuite choisir entre deux versions compressées de cette image. Le facteur de compression sera toujours indiqué en dessous de la première image.
+ Dans cette première série d'exercices, une image vous sera montrée, vous devrez ensuite choisir entre deux versions compressées de cette image. Le facteur de compression sera toujours indiqué en dessous de la première image.
 :::
 :::{admonition} Règle de compression
 ---
 class: attention
 ---
-Pour tout les exercices de cette série c'est la règle suivante qui s'applique:
+Pour tous les exercices de cette série, c'est la règle suivante qui s'applique:
 
         Si >=2/4 px sont noir -> nouveau pixel noir
 :::
@@ -379,7 +397,7 @@ width: 200
 Les corrigés de ces exercices se trouvent en fin de chapitre.
 ```
 
-Cette série d'exercices permet de mettre entre autre une chose en avant: La compression des "cercles". Ceux-ci ont tendance à vite partiellement s'effacer lorsqu'on les comprime et qu'ils sont trop fin. Pour éviter ce problème, il peut être judicieux d'avoir des contours assez marqués pour toute forme un peu courbe. De plus,
+Cette série d'exercices permet de mettre entre autre une chose en avant: La compression des "cercles". Ceux-ci ont tendance à vite partiellement s'effacer lorsqu'on les comprime et qu'ils sont trop fins. Pour éviter ce problème, il peut être judicieux d'avoir des contours assez marqués pour toute forme un peu courbée. De plus, les petits détails ont le même problème.
 
 #### Série d'exercices 2
 :::{warning}
@@ -502,11 +520,11 @@ width: 200
 #### Série d'exercices 1
 
 ## Explications des algorithmes
- :::{admonition} Notions à connaitre
+ :::{admonition} Prérequis
 ---
 class: attention
 ---
-Pour comprendre comment fonctionnent les algorithmes suivants, il est préférable de déjà avoir quelques connaissances sur le fonctionnement et les manipulations des listes en python.
+Pour comprendre le fonctionnement des algorithmes suivants, il est conseillé d'avoir quelques connaissances sur le fonctionnement et les manipulations des listes en python.
 :::
 ### Inversion des coordonnées
 Pour la compression d’images, il a fallu commencer par une restructuration des listes. En effet dans le langage courant, nous lisons les informations de gauche à droite et de haut en bas, or, lorsque nous soutirons une image sous forme de liste de listes de pixels, l’ordinateur nous renvoi une liste qui se lit de haut en bas et de gauche à droite.
