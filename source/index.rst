@@ -16,8 +16,7 @@ Cours d'introduction à la compression de données (images et textes)
     3_textes.md
     4_glossaire
     5_bibliographie
-    6_src_img
-    7_remerciements.md
+    6_remerciements.md
     todo.rst
 
 Indices and tables
