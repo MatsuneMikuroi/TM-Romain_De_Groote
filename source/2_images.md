@@ -405,15 +405,15 @@ Cette série d'exercices permet de mettre entre autre une chose en avant: La com
 Cette série d'exercices varie selon si le script est en version papier ou en version web. Dans les deux cas des solutions seront proposées aux élèves. Néanmoins, la version web étant automatisée, la correction sera plus terre-à-terre.
 :::
 
-::::{raw} html
+:::{raw} html
 
-```{admonition} Conseil
+```{tip}
 Dans cette deuxième série d'exercices, vous allez pouvoir vous entrainez sur l'ordinateur directement. La fenêtre d'exécution en dessous, une fois lancée, vous montrera une image et vous devrez la compresser. Vous n'avez qu'à faire un clic pour passer de blanc à noir et inversemment. Il est possible de relancer le programme pour avoir une nouvelle image.
 ```
 
 <iframe src="https://brython.info/gallery/phaser.html" width="100%" height="600"></iframe>
 
-::::
+:::
 :::{raw} latex
 ```{admonition} Consigne
 Pour cette série d'exercices, vous aurez besoin d'une feuille cadrillée ainsi que de quoi écrire. Pour chacune des images qui suivront, vous devrez effectuer leur conversion avec le facteur donné.
@@ -428,6 +428,10 @@ Pour cette série d'exercices, vous aurez besoin d'une feuille cadrillée ainsi 
 8. 
 9. 
 10. 
+
+```{warning}
+Les corrigés de ces exercices se trouvent en fin de chapitre.
+```
 :::
 
 
@@ -478,7 +482,133 @@ Pour tous les exercices de cette série, c'est la règle suivante qui s'applique
 9. 
 10. 
 
-Les co
+```{warning}
+Les corrigés de ces exercices se trouvent en fin de chapitre.
+```
+
+#### Série d'exercices 4
+:::{warning}
+Cette série d'exercices varie selon si le script est en version papier ou en version web. Dans les deux cas des solutions seront proposées aux élèves. Néanmoins, la version web étant automatisée, la correction sera plus terre-à-terre.
+:::
+
+:::{raw} html
+
+```{tip}
+Dans cette denière série d'exercices, vous allez pouvoir vous entrainez sur l'ordinateur directement. La fenêtre d'exécution en dessous, une fois lancée, vous montrera une image et vous devrez la compresser. Vous n'avez qu'à faire un clic pour passer de *0* à *1* et inversemment. Il est possible de relancer le programme pour avoir une nouvelle image.
+```
+
+<iframe src="https://brython.info/gallery/phaser.html" width="100%" height="600"></iframe>
+
+:::
+:::{raw} latex
+```{admonition} Consigne
+Pour cette dernière série d'exercices, vous aurez besoin, comme pour la seconde série, d'une feuille cadrillée ainsi que de quoi écrire. Pour chacune des images qui suivront, vous devrez effectuer leur conversion avec le facteur donné, cette fois-ci en indiquant la valeur de chaque pixel.
+```
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+
+```{warning}
+Les corrigés de ces exercices se trouvent en fin de chapitre.
+```
+:::
+
+### Images en nuances de gris
+Maintenant que vous maîtrisez la représentation des images avec des valeurs et plus des couleurs, il est possible de s'attaquer à la compression d'images en nuances de gris. Il existe deux différences entre la compression en noir/blanc et celle en nuance de gris:
+* Les valeurs ne sont plus *0* pour blanc et *1* pour noir, mais *0* pour noir et *15* pour blanc, chaque pallier intermédiare correspondant à un niveau de gris. Cette différence est juste due au format utilisé. Les images en noir/blanc étaient des fichiers PBM alors celles en nuances de gris sont en PGM.
+```{figure} imgs/exemples/nuances.png
+---
+class: with border
+---
+Nuancier du format PGM.
+```
+* La règle de compression à laquelle vous êtes habituée va légèrement se complexifier:
+        int(valeur totale/nombre de pixel total) = valeur du nouveau pixel.
+
+En précisant cette règle, la compression des images en noir et blanc fonctionne toujours, néanmoins il est désormais possible de l'appliquer aux images en nuances de gris.
+
+#### Série d'exercices 1
+:::{admonition} Consigne
+ Cette première série d'exercices ressemble à la première des images en noir/blanc. Une image vous sera montrée, vous devrez ensuite choisir entre deux versions compressées de cette image. Le facteur de compression sera toujours indiqué en dessous de la première image.
+:::
+:::{admonition} Règle de compression
+---
+class: attention
+---
+Pour tous les exercices de cette série, c'est la règle suivante qui s'applique:
+
+        Si >=2/4 px sont noir -> nouveau pixel noir
+:::
+
+
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+
+```{warning}
+Les corrigés de ces exercices se trouvent en fin de chapitre.
+```
+
+Ces exercices ont permis de mettre en lumière quelque-chose, les images semblent mieux proportionnées. Là où la compression en noir blanc avait tendance à vite perdre des informations, la compression en nuances de gris garde toujours une trace de tous pixels. Des zones plus claires indiquant la présence de pixels plus clairs en moyenne. Cela permet aussi d'éviter un changement de proportion entre clair et obscur. Là où nous avions vu que notre règle pouvait changer la proportion de pixels noirs et de pixels blancs, la compression en nuance de gris ne pourra donner un pixel noir comme compression finale si l'image était majoritairement blanche.
+
+#### Série d'exercices 2
+:::{warning}
+Cette série d'exercices varie selon si le script est en version papier ou en version web. Dans les deux cas des solutions seront proposées aux élèves. Néanmoins, la version web étant automatisée, la correction sera plus terre-à-terre.
+:::
+
+:::{raw} html
+
+```{tip}
+Dans cette deuxième série d'exercices, vous allez pouvoir vous entrainez sur l'ordinateur directement. La fenêtre d'exécution en dessous, une fois lancée, vous montrera une image et vous devrez la compresser. Vous n'avez qu'à faire un clic pour passer de *0* à *1* et inversemment. Il est possible de relancer le programme pour avoir une nouvelle image.
+```
+
+<iframe src="https://brython.info/gallery/phaser.html" width="100%" height="600"></iframe>
+
+:::
+:::{raw} latex
+```{admonition} Consigne
+Pour cette deuxième série d'exercices, vous aurez besoin, comme pour certaines séries de la compression en noir/blanc, d'une feuille cadrillée ainsi que de quoi écrire. Pour chacune des images qui suivront, vous devrez effectuer leur conversion avec le facteur donné, cette fois-ci en indiquant la valeur de chaque pixel.
+```
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+
+```{warning}
+Les corrigés de ces exercices se trouvent en fin de chapitre.
+```
+:::
+
+### La compression d'images en couleur
+Pour finir ce chapitre sur la compression d'images par réduction de résolution, nous allons nous intéressé aux images en couleur. Le format utilisé est le PPM, ce dernier fonctionne comme le PBM et le PGM, la seule différence étant qu'il ne représente plus les couleurs des pixels par un nombre mais par une combinaison de trois nombre.
+```{figure} imgs/exemples/color.png
+9 couleurs "simples" en RGB.
+```
+L'image ci-dessus représenté comme une matrice dont les valeurs sont données en RGB. Petit point d'optique:
+
+La lumière est composée de particules nommées photons, chacun possèdant une certaine longueur d'onde. Lorsqu'un photon vient taper l'oeil humain, il active des cellules réceptrices. Néanmoins, avec des photons dans les longueurs d'ondes des rouges, verts et bleus, il est en fait possible de produire toutes les couleurs visibles. Les pixels étant finalement que trois leds disposées côte à côte. Un pixel est noir lorsque toutes ses leds sont éteintes, il est blanc lorsqu'elles sont toutes allumées. Enfin, il est dans une nuance de gris si l'intensité en rouge est égale à celle en verte et en bleue. Sur l'image au-dessus (de gauche à droite), le premier carreau n'est composé que de pixels allumé sur la leds rouge uniquement. Le second des pixels dont seuls les leds vertes sont allumées et la troisième dont ce sont les leds bleues. Pour la seconde ligne, pour le carreau jaune ce sont les leds rouges et vertes qui sont allumées, pour le cyan les leds vertes et bleues, pour le magenta les leds bleues et rouges. Enfin, la troisième ligne est composée d'un carreau blanc, donc toutes ses leds sont allumées au maximum; d'un carreau gris, dont toutes les leds sont à la moitié de leur intensité maxiamle; finalement un carreau noir dont l'entièreté des leds sont éteintes. Représenté sous forme d'un tableau, nous obtenons ceci:
+
+
 
 ## Indentification de patterns
 Une autre méthode pour comprimer des données est d'identifier un pattern strict et de dire combien de fois ce dernier se répète. Reprenons notre exemple habituel en affichant une grille.
@@ -496,7 +626,7 @@ L'ordinateur vas alors dessiner 26 pixels blancs avant d'en dessiner 6 noirs. Ce
 <iframe src="https://brython.info/gallery/phaser.html" width="100%" height="600"></iframe>
 :::
 
-
+:::{raw} latex
 1. 
 2. 
 3. 
@@ -513,8 +643,10 @@ L'ordinateur vas alors dessiner 26 pixels blancs avant d'en dessiner 6 noirs. Ce
 14. 
 15. 
 
-
-
+```{warning}
+Les corrigés de ces exercices se trouvent en fin de chapitre.
+```
+:::
 ## Conclusion
 Pour conclure ce chapitre, il est important de retenir que les images vont en vérité être comprimer de manière quasi-systématique. Comme il s'agit de l'une des principales informations, étant aussi à la base des vidéos, il est important que ces dernières ne remplissent pas l'intégralité de l'espace de stockage que nous possèdons. Les allégées permets aussi de se les échanger plus rapidement. Néanmoins, une image comprimée ne va pas forcément perdre de sa qualité. Il existe, en plus des deux types de compressions abordés, une troisième manière de comprimer les images, celle-ci visant à baisser le nombre de couleur qu'il est possible d'afficher.
 
