@@ -414,25 +414,75 @@ Dans cette deuxième série d'exercices, vous allez pouvoir vous entrainez sur l
 <iframe src="https://brython.info/gallery/phaser.html" width="100%" height="600"></iframe>
 
 :::
-:::{raw} latex
 ```{admonition} Consigne
-Pour cette série d'exercices, vous aurez besoin d'une feuille cadrillée ainsi que de quoi écrire. Pour chacune des images qui suivront, vous devrez effectuer leur conversion avec le facteur donné.
+Pour cette série d'exercices, vous aurez besoin d'une feuille cadrillée ainsi que de quoi écrire. Pour chacune des images qui suivront, vous devrez effectuer leur conversion avec un facteur 2.
 ```
+
 1. 
-2. 
+```{figure} imgs/exo/bw/2/latex/1.png
+---
+width: 300
+---
+```
+2.  
+```{figure} imgs/exo/bw/2/latex/2.png
+---
+width: 300
+---
+```
 3. 
+```{figure} imgs/exo/bw/2/latex/3.png
+---
+width: 300
+---
+```
 4. 
+```{figure} imgs/exo/bw/2/latex/4.png
+---
+width: 300
+---
+```
 5. 
+```{figure} imgs/exo/bw/2/latex/5.png
+---
+width: 300
+---
+```
 6. 
+```{figure} imgs/exo/bw/2/latex/6.png
+---
+width: 300
+---
+```
 7. 
+```{figure} imgs/exo/bw/2/latex/7.png
+---
+width: 300
+---
+```
 8. 
+```{figure} imgs/exo/bw/2/latex/8.png
+---
+width: 300
+---
+```
 9. 
+```{figure} imgs/exo/bw/2/latex/9.png
+---
+width: 300
+---
+```
 10. 
+```{figure} imgs/exo/bw/2/latex/10.png
+---
+width: 300
+---
+``` 
 
 ```{warning}
 Les corrigés de ces exercices se trouvent en fin de chapitre.
 ```
-:::
+
 
 
 Jusqu'à présent, la compression d'images a été abordé très visuellement. Néanmoins, cela n'est faisable uniquement avec des images en noir et blanc, car dès que des nuances de gris apparraissent, il devient difficile de déterminer la nuance à appliquer. C'est pour cela que désormais les images seront affichées de deux façons: l'image en tant que telle et l'image représenté en une matrice de pixels. Pour reprendre l'exemple de l'image des montagnes, on obtiendrait ceci:
@@ -744,15 +794,65 @@ Les bonnes réponses étaient
 
 ##### Série d'exercices 2
 1. 
-2. 
+```{figure} imgs/exo/bw/2/latex/1_soluce.png
+---
+width: 300
+---
+```
+2.  
+```{figure} imgs/exo/bw/2/latex/2_soluce.png
+---
+width: 300
+---
+```
 3. 
+```{figure} imgs/exo/bw/2/latex/3_soluce.png
+---
+width: 300
+---
+```
 4. 
+```{figure} imgs/exo/bw/2/latex/4_soluce.png
+---
+width: 300
+---
+```
 5. 
+```{figure} imgs/exo/bw/2/latex/5_soluce.png
+---
+width: 300
+---
+```
 6. 
+```{figure} imgs/exo/bw/2/latex/6_soluce.png
+---
+width: 300
+---
+```
 7. 
+```{figure} imgs/exo/bw/2/latex/7_soluce.png
+---
+width: 300
+---
+```
 8. 
+```{figure} imgs/exo/bw/2/latex/8_soluce.png
+---
+width: 300
+---
+```
 9. 
+```{figure} imgs/exo/bw/2/latex/9_soluce.png
+---
+width: 300
+---
+```
 10. 
+```{figure} imgs/exo/bw/2/latex/10_soluce.png
+---
+width: 300
+---
+``` 
 
 ##### Série d'exercices 3
 1. 
