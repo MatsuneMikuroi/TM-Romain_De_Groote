@@ -741,66 +741,7 @@ Les bonnes réponses étaient
 9. (A)
 10. (B)
 ###### Explications
-1. 
-```{figure} imgs/exo/bw/1/1_wrong_explain.png
----
-width: 200
----
-```
-2. 
-```{figure} imgs/exo/bw/1/2_wrong_explain.png
----
-width: 200
----
-```
-3. 
-```{figure} imgs/exo/bw/1/3_wrong_explain.png
----
-width: 200
----
-```
-4. 
-```{figure} imgs/exo/bw/1/4_wrong_explain.png
----
-width: 200
----
-```
-5. 
-```{figure} imgs/exo/bw/1/5_wrong_explain.png
----
-width: 200
----
-```
-6. 
-```{figure} imgs/exo/bw/1/6_wrong_explain.png
----
-width: 200
----
-```
-7. 
-```{figure} imgs/exo/bw/1/7_wrong_explain.png
----
-width: 200
----
-```
-8. 
-```{figure} imgs/exo/bw/1/8_wrong_explain.png
----
-width: 200
----
-```
-9. 
-```{figure} imgs/exo/bw/1/9_wrong_explain.png
----
-width: 200
----
-```
-10. 
-```{figure} imgs/exo/bw/1/10_wrong_explain.png
----
-width: 200
----
-```
+
 ##### Série d'exercices 2
 1. 
 2. 
