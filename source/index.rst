@@ -3,7 +3,7 @@
     You can adapt this file completely to your liking, but it should at least
     contain the root `toctree` directive.
 
-Cours d'introduction à la compression de données (images et textes)
+Cours d'introduction à la compression d'images
 ============================
 
 ..  toctree::
@@ -11,12 +11,15 @@ Cours d'introduction à la compression de données (images et textes)
     :caption: Table des matières
 
     0_introduction.md
-    1_preface.md
-    2_images.md
-    3_textes.md
-    4_glossaire
-    5_bibliographie
-    6_remerciements.md
+    2_resolution.md
+    3_patterns.md
+    4_couleurs.md
+    5_conclusion.md
+    6_solutions.md
+    7_codes.md
+    8_glossaire.md
+    9_bibliographie.md
+    10_remerciements.md
     todo.rst
 
 Indices and tables
