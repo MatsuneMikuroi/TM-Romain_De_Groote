@@ -11,12 +11,14 @@ Cours d'introduction à la compression d'images
     :caption: Table des matières
 
     0_introduction.md
-    2_resolution.md
-    3_patterns.md
-    4_couleurs.md
-    5_conclusion.md
-    6_solutions.md
-    7_codes.md
+    1_processus.md
+    2_objectif.md
+    3_resolution.md
+    4_patterns.md
+    5_couleurs.md
+    6_conclusion.md
+    7_solutions.md
+    7bis_codes.md
     8_glossaire.md
     9_bibliographie.md
     10_remerciements.md
