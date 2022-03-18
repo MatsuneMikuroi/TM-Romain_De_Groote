@@ -134,28 +134,28 @@ Ensuite, une première variable est initialisée, nommée *nb_val*. Elle servira
 La première vient juste additionner les valeurs des pixels dans une variable avant de diviser le résultat par le nombre de pixels.
 ```python
 if _format == "PBM" or _format == "PGM":
-            val = 0
-            for y in range(coor_y, coor_y + _len):
-                for x in range(coor_x, coor_x + _len):
-                    val = val + img[y][x]
-                nb_val = nb_val + 1
-            
-            if nb_val != 0:
-                val = int(val/nb_val)
+    val = 0
+    for y in range(coor_y, coor_y + _len):
+        for x in range(coor_x, coor_x + _len):
+            val = val + img[y][x]
+        nb_val = nb_val + 1
+    
+    if nb_val != 0:
+        val = int(val/nb_val)
 ```
 La deuxième quant à elle vient additionner les valeurs RGB dans une liste, chacune des valeurs totales est ensuite divisée par le nombre de pixels pris en compte.
 ```python
 elif _format == "PPM":
-            val = [0, 0, 0]
-            for y in range(coor_y, coor_y + _len):
-                for x in range(coor_x, coor_x + _len):
-                    for _ in len(val):
-                        val[_] = img[y][x][_]
-                    nb_val = nb_val + 1
-        
-            if nb_val != 0:
-                for _ in len(val):
-                    val[_] = val[_] / nb_val
+    val = [0, 0, 0]
+    for y in range(coor_y, coor_y + _len):
+        for x in range(coor_x, coor_x + _len):
+            for _ in len(val):
+                val[_] = img[y][x][_]
+            nb_val = nb_val + 1
+
+    if nb_val != 0:
+        for _ in len(val):
+            val[_] = val[_] / nb_val
 ```
 Dans les deux cas, la sous-fonction finit par retourner la valeur du nouveau pixel. Cette valeur est enfin assignée au nouveau pixel dans la fonction pricipale. L'opération se répète autant qu'il y a de pixels et finit par retourner l'image compressée sous forme de liste de listes.
 

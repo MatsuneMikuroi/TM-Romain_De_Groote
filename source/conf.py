@@ -97,6 +97,7 @@ latex_elements = {
    'releasename' : "Collège du sud, Travail de maturité",
    'fontpkg': '\\usepackage{times}',
    'babel': '\\usepackage[francais]{babel}',
+   'figure_align': 'H',
    'preamble': r'''
 %\usepackage[titles]{tocloft}
 %\cftsetpnumwidth {1.25cm}\cftsetrmarg{1.5cm}

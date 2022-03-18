@@ -4,3 +4,6 @@ sudo apt update
 sudo apt-get install texlive-latex-extra texlive-lang-french texlive-fonts-recommended latexmk
 make tmpdf
 make getpdf
+pip install -r requirements.txt 
+make html
+make livehtml

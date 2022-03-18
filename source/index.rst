@@ -4,7 +4,7 @@
     contain the root `toctree` directive.
 
 Cours d'introduction à la compression d'images
-============================
+==============================================
 
 ..  toctree::
     :maxdepth: 2
@@ -23,9 +23,3 @@ Cours d'introduction à la compression d'images
     9_bibliographie.md
     10_remerciements.md
     todo.rst
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`
