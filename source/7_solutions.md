@@ -153,7 +153,7 @@ width: 300
 10. 
 
 
-## Identification de patterns
+## Identification de motifs
 ### Série d'exercices 1
 1. 
 2. 
@@ -170,3 +170,6 @@ width: 300
 13. 
 14. 
 15. 
+
+
+## Réduction du nombre de couleurs

@@ -1,4 +1,5 @@
 # Indentification de motifs
+
 Une autre méthode pour comprimer des données est d'identifier un pattern strict et de dire combien de fois ce dernier se répète. Reprenons notre exemple habituel en affichant une grille.
 ```{figure} imgs/mountains/32x32_gride.png
 ```
@@ -25,7 +26,7 @@ Néanmoins, il est possible de rendre un algorithme comme celui-ci encore plus p
 
 De plus, nous avons au total 21 caratères alors que nous étions à 72 avant. L'espace que prend l'image sur le disque dur a diminué de 65%. Cela représente une quatité d'espace non négligeable.
 
-## Série d'exercices 1
+### Série d'exercices 1
 :::{admonition} Consigne
  Dans cette unique série d'exercices de ce chapitre, une image quadrillée vous sera montré et vous devrez la comprimer en identifiant les patterns qui la compose. Les images seront issus des exercices précédents.
  :::

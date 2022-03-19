@@ -12,14 +12,15 @@ Cours d'introduction à la compression d'images
 
     0_introduction.md
     1_processus.md
-    2_objectif.md
+    2_objectifs.md
     3_resolution.md
-    4_patterns.md
+    4_motifs.md
     5_couleurs.md
-    6_conclusion.md
+    6_conclusioncours.md
     7_solutions.md
-    7bis_codes.md
-    8_glossaire.md
-    9_bibliographie.md
-    10_remerciements.md
+    8_codes.md
+    9_conclusiontm.md
+    10_glossaire.md
+    11_bibliographie.md
+    12_remerciements.md
     todo.rst
