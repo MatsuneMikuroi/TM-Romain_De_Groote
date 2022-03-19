@@ -22,5 +22,6 @@ Cours d'introduction à la compression d'images
     9_conclusiontm.md
     10_glossaire.md
     11_bibliographie.md
-    12_remerciements.md
+	12_annexes.md
+    13_remerciements.md
     todo.rst

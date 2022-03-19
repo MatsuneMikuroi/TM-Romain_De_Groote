@@ -11,26 +11,13 @@ Le point bleu minuscule sur l'écran est de 1px*1px.
 ```
 C’est donc à cause de cette façon de représenter les informations qu'il lui est impossible  d'afficher de cercle. Néanmoins, il est possible de lui demander de créer un polygone ressemblant fortement à un cercle. Voici un exemple :
 
-```{figure} imgs/circle/512x512.png
-Représentation d'un cercle dans un carré de 512px*512px.
-```
-Le cercle ci-dessus à un diamètre de 512 pixels, l'image ayant une haute résolution, la forme nous apparait comme un cercle. Que se passerait-il maintenant si la taille de  l'image était réduite ? Diminuons sa taille par un facteur 2.
-
-```{figure} imgs/circle/256x256.png
----
-width: 256
----
-Représentation d'un cercle dans un carré de 256px*256px.
-```
-En diminuant la taille de ce cercle par 2, il devient possible de distinguer quelques endroits où les pixels semblent plus dessiner des cotés qu’une véritable courbe, comme sur le haut du cercle. Continuons de diminuer la taille de l'image, toujours avec un facteur 2.
-
 ```{figure} imgs/circle/128x128.png
 ---
-width: 256
+width: 128
 ---
 Représentation d'un cercle dans un carré de 128px*128px.
 ```
-Il devient maintenant plus évident que ce qui ressemblait à un cercle commence à devenir un polygone avec un très grand nombre de côté. Le haut semble commencer à s'aplatir. Si l'on continue cela nous donne les résultats suivants :
+Le cercle ci-dessus à un diamètre de 512 pixels, l'image ayant une haute résolution, la forme nous apparait comme un cercle. Que se passerait-il maintenant si la taille de  l'image était réduite ? Diminuons sa taille par un facteur 2.
 
 ```{figure} imgs/circle/64x64.png
 ---
@@ -38,6 +25,8 @@ width: 256
 ---
 Représentation d'un cercle dans un carré de 64px*64px.
 ```
+En diminuant la taille de ce cercle par 2, il devient possible de distinguer quelques endroits où les pixels semblent plus dessiner des cotés qu’une véritable courbe, comme sur le haut du cercle. Continuons de diminuer la taille de l'image, toujours avec un facteur 2.
+
 ```{figure} imgs/circle/32x32.png
 ---
 width: 256
