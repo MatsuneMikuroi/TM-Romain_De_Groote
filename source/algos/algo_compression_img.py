@@ -1,16 +1,3 @@
-def switch_xy(imgxy:list) -> list:
-    imgyx = []
-    coord_x = len(imgxy)
-    coord_y = len(imgxy[0])
-    
-    for i in range(coord_y):
-        imgyx.append([0]*coord_x)
-    
-    for x in range(coord_x):
-        for y in range(coord_y):
-            imgyx[y][x] = imgxy[x][y]
-    
-    return imgyx
 #___________________________________________________________________________________________________________________________________________________________________________________
 def compress(img:list, factor:float, _format:str) -> list:
     #img -> image à comprimmer

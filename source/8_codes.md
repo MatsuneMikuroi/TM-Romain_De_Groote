@@ -14,69 +14,6 @@ Dans ce chapitre,  les images utilisés sont sous format PBM, PGM et PPM. Ces fo
 Fichier PBM mis en fichier texte.
 ```
 Il est visible de voir, comme expliqué dans le cours, que la valeur des pixels est indiqué tel quel, sous la forme de liste. 
-### Inversion des coordonnées
-Pour la compression d’images, il a fallu commencer par une restructuration des listes. En effet dans le langage courant, nous lisons les informations de gauche à droite et de haut en bas, or, lorsque nous soutirons une image sous forme de liste de listes de pixels, l’ordinateur nous renvoi une liste qui se lit de haut en bas et de gauche à droite.
-
-        Par exemple la liste [[1,0,0,0,1],[1,0,0,1,1],[1,0,1,0,1],[1,1,0,0,1],[1,0,0,0,1]],
-        nous donne l'image suivante:
-```{figure} imgs/exemples/z.png
----
-class: with border
----
-```
-
- Le premier algorithme à développer devait donc inverser les coordonnées x y des images.
- 
-En premier temps, on définit une fonction ayant en paramètre une *list* et qui renvoie une *list*.
-```python
-def switch_xy(imgxy:list)->list:
-```
-Une fois chose faite, on initie trois variables:
-* une liste vide dans laquelle on viendra par la suite rentrer les nouvelles coordonnées
-```python
- imgyx: str = []
-```
-* deux variables de confort
-```python
-coord_x = len(imgxy)
-coord_y = len(imgxy[0])
-```
-:::{admonition} Conseil
----
-class: tip
----
-Ces deux variables éviteront des erreurs entre les coordonnées. Concernant la deuxième, le fait de regarder la longueur de la première sous-liste permet de la définir car toutes les sous-listes ont le même nombre d'éléments, une image étant forcément rectangulaire.
-:::
-
-Ensuite on vient créer une image de même dimension mais entièrement blanche avec la boucle *for* suivante:
-```python
-for i in range(coord_y):
-    imgyx.append([0]*coord_x)
-```
-Après, il ne reste plus qu'à parcourir chaque valeur de chaque sous-liste et les attribuer à leur nouvelle position, ce que l'on peut faire avec une double boucle *for*:
-```python
-for x in range(coord_x):
-    for y in range(coord_y):
-        imgyx[y][x] = imgxy[x][y]
-```
-Enfin, on retourne notre nouvelle liste, la fonction en entier ressemblant à cela
-
- ```python
- def switch_xy(imgxy:list) -> list:
-    imgyx = []
-    coord_x = len(imgxy)
-    coord_y = len(imgxy[0])
-    
-    for i in range(coord_y):
-        imgyx.append([0]*coord_x)
-    
-    for x in range(coord_x):
-        for y in range(coord_y):
-            imgyx[y][x] = imgxy[x][y]
-    
-    return imgyx
- ```
-
 ### Compression des images
 Le défi suivant a été de développer un algorithme de compression d'images. J'ai choisi la règle suivante:
 
