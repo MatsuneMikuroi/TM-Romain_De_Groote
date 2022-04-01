@@ -1,5 +1,5 @@
 # Indentification de motifs
-
+## Identification simple
 Une autre méthode pour comprimer des données est d'identifier un pattern strict et de dire combien de fois ce dernier se répète. Reprenons notre exemple habituel en affichant une grille.
 ```{figure} imgs/mountains/32x32_gride.png
 ```
@@ -17,6 +17,8 @@ Néanmoins, il est possible de rendre un algorithme comme celui-ci encore plus p
         4(x1 x0)
         4(x0 x1)
         4(x1 x0)
+
+## Identification récursive
 
 À partir de là le piège serait de s'y arrêter, or nous nous retrouverions avec une image représenter en 8 lignes de chacune 9 caratères ( le caractère de retour à la ligne est à prendre en compte), ce qui finalement reviens au même nombre que si nous n'avions pas compresser l'image. Or, nous répétons 4 fois les mêmes instructions, les lignes impaires étant semblables à la première ligne et les lignes paires à la seconde. Il est donc possible d'écrire le tout en seulement 2 lignes:
 
@@ -49,3 +51,5 @@ De plus, nous avons au total 21 caratères alors que nous étions à 72 avant. L
 ```{warning}
 Les corrigés de ces exercices se trouvent en fin de chapitre.
 ```
+
+## Conclusion

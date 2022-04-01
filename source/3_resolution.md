@@ -5,13 +5,13 @@ Avant de commencer à s'attaquer à la compression pure, il est bon de comprendr
 
 De nos jours, tout a été numérisé. Or, contrairement à une photo prise par un appareil polaroid, qui reproduit exactement la réalité, l’ordinateur est limité dans sa représentation des images. Il ne peut pas exemple par dessiner de cercle. Cela est dû au fait que pour afficher quelque chose, l’ordinateur allume des minuscules leds formant une matrice rectangulaire. Il est d’ailleurs possible, suivant votre niveau de vue, de les distinguer si vous êtes sur ordinateur. Sinon, voici une image dont les carrés sont respectivement de 64, 32, 16, 8, 4, 2 et 1 pixels.
 
-```{figure} imgs/exemples/pixel.png
+```{figure} imgs/resolution/exemples/pixel.png
 :alt:
 Le point bleu minuscule sur l'écran est de 1px*1px.
 ```
 C’est donc à cause de cette façon de représenter les informations qu'il lui est impossible  d'afficher de cercle. Néanmoins, il est possible de lui demander de créer un polygone ressemblant fortement à un cercle. Voici un exemple :
 
-```{figure} imgs/circle/128x128.png
+```{figure} imgs/resolution/circle/128x128.png
 ---
 width: 128
 ---
@@ -19,47 +19,47 @@ Représentation d'un cercle dans un carré de 128px*128px.
 ```
 Le cercle ci-dessus à un diamètre de 512 pixels, l'image ayant une haute résolution, la forme nous apparait comme un cercle. Que se passerait-il maintenant si la taille de  l'image était réduite ? Diminuons sa taille par un facteur 2.
 
-```{figure} imgs/circle/64x64.png
+```{figure} imgs/resolution/circle/64x64.png
 ---
-width: 256
+width: 128
 ---
 Représentation d'un cercle dans un carré de 64px*64px.
 ```
 En diminuant la taille de ce cercle par 2, il devient possible de distinguer quelques endroits où les pixels semblent plus dessiner des cotés qu’une véritable courbe, comme sur le haut du cercle. Continuons de diminuer la taille de l'image, toujours avec un facteur 2.
 
-```{figure} imgs/circle/32x32.png
+```{figure} imgs/resolution/circle/32x32.png
 ---
-width: 256
+width: 128
 ---
 Représentation d'un cercle dans un carré de 32px*32px.
 ```
-```{figure} imgs/circle/16x16.png
+```{figure} imgs/resolution/circle/16x16.png
 ---
-width: 256
+width: 128
 ---
 Représentation d'un cercle dans un carré de 16px*16px.
 ```
 Pour ces trois images, la compression rend bien visible le fait que ce ne soit pas réellement un cercle. Néanmoins il peut encore être facilement acceptable qu'elles en représentent un. Ce qui n'est pas le cas des trois derniers niveaux de compression.
 
-```{figure} imgs/circle/8x8.png
+```{figure} imgs/resolution/circle/8x8.png
 ---
-width: 256
+width: 128
 ---
 Représentation d'un cercle dans un carré de 8px*8px.
 ```
 Désormais, l'image semble plus représenter un polygone quelconque qu'un cercle, ceci nous fixe une limite : arriver à un certain stade, une image trop comprimée peut perdre des détails essentiels à sa compréhension.
 
-```{figure} imgs/circle/4x4.png
+```{figure} imgs/resolution/circle/4x4.png
 ---
-width: 256
+width: 128
 ---
 Représentation d'un cercle dans un carré de 4px*4px.
 ```
 Pour cette avant dernière image, il n'est plus possible de répertorier cette figure comme un cercle, l'information originale a entièrement été perdue.
 
-```{figure} imgs/circle/2x2.png
+```{figure} imgs/resolution/circle/2x2.png
 ---
-width: 256
+width: 128
 ---
 Représentation d'un cercle dans un carré de 2px*2px.
 ```
@@ -70,7 +70,7 @@ Cette petite expérience permet de démontrer qu'il n'est pas possible de réell
 ## Images en noir et blanc
 Maintenant, il est possible de se demander comment l'ordinateur a perdu ces détails. Lorsque l'on réduit la taille d'une image, l'ordinateur va chercher quels sont les pixels les moins importants. Prenons l'exemple d'une photo d'un paysage montagneux pour comprendre.
 
-```{figure} imgs/mountains/32x32.png
+```{figure} imgs/resolution/mountains/32x32.png
 ---
 class: with border
 ---
@@ -82,7 +82,7 @@ Il est possible de voir plusieurs choses sur cette image. Un soleil dans le coin
 
 Voilà le résultat :
 
-```{figure} imgs/mountains/black/16x16.png
+```{figure} imgs/resolution/mountains/black/16x16.png
 ---
 class: with border
 ---
@@ -90,7 +90,7 @@ Paysage en 16px*16px.
 ```
 L'idée de l'image reste là, néanmoins les détails ont été perdu. Pourquoi ? Les oiseaux devraient encore être visibles, du moins en partie, car ils étaient représentés dans un rectangle de 3 pixels de long par 2 de haut. Même chose pour l'astre présent dans le ciel, il faisait 2 pixels de côté. Alors pourquoi tous ces détails ont-ils disparu ? La raison est la logique utilisée pour réduire l'image. Reprenons notre première image mais cette fois-ci mettons lui un cadrillage de 2px*2px dessus.
 
-```{figure} imgs/mountains/32x32_gride.png
+```{figure} imgs/resolution/mountains/32x32_gride.png
 ---
 class: with border
 ---
@@ -99,7 +99,7 @@ L’ordinateur va à chaque fois regarder les quatre pixels présents dans chaqu
 
 Mais reprenons notre image en 16px*16px, que se passe-t-il si l'on continue de la comprimer ?
 
-```{figure} imgs/mountains/black/8x8.png
+```{figure} imgs/resolution/mountains/black/8x8.png
 ---
 class: with border
 ---
@@ -107,7 +107,7 @@ Paysage en 8px*8px.
 ```
 Comme avec le cercle, on arrive à un stade où la perte d'information devient trop grande. Avec une connaissance de l'image d'origine, il est encore possible de se la représenter, mais sans cela, c'est tout bonnement impossible.
 
-```{figure} imgs/mountains/black/4x4.png
+```{figure} imgs/resolution/mountains/black/4x4.png
 ---
 class: with border
 ---
@@ -115,7 +115,7 @@ Paysage en 4px*4x.
 ```
 Arrivée à ce stade, l'image n'est même plus reconnaissable. Aucune réelle information ne peut en être tirée.
 
-```{figure} imgs/mountains/black/2x2.png
+```{figure} imgs/resolution/mountains/black/2x2.png
 ---
 class: with border
 ---
@@ -123,7 +123,7 @@ Paysage en 2px*2px.
 ```
 L’image désormais semble révélé qu’il y avait une grande structure dans la partie inférieure de l’image, ce qui correspond aux montagnes. Néanmoins cette information est erronée et c'est ce que le dernier stade de la compression va nous révéler.
 
-```{figure} imgs/mountains/black/1x1.png
+```{figure} imgs/resolution/mountains/black/1x1.png
 ---
 class: with border
 ---
@@ -131,7 +131,7 @@ Paysage en 1px*1px.
 ```
 Comme pour le cercle, on se retrouve avec une image finale entièrement noire. Cela est dû à la présence des montagnes dans la partie inférieure. Mais quel est le problème alors ? Reprenons notre image de départ et comparons là avec celle-ci.
 
-```{figure} imgs/mountains/32x32.png
+```{figure} imgs/resolution/mountains/32x32.png
 ---
 class: with border
 ---
@@ -141,17 +141,17 @@ L'image originale est majoritairement blanche, le noir ne fait que dessiner la f
 
 Essayons désormais en changeant la règle de compression.
 
-        Si >2/4 px sont noirs -> nouveau pixel noir
+         Si plus de 2px sur 4 sont noir, alors le pixel qui en résultera sera noir.
 
 Le changement est, en soi, minime. La seule différence étant que si 2/4 px sont noir alors le nouveau pixel sera blanc, voyons les impacts que cela a.
-```{figure} imgs/mountains/white/16x16.png
+```{figure} imgs/resolution/mountains/white/16x16.png
 ---
 class: with border
 ---
 Première compression avec la nouvelle règle. (16px*16px)
 ```
 Ce changement, bien qu'infime, vient pratiquement de faire disparaître l'image en sa totalité. Cela est dû au fait que la majorité des pixels noirs sur la première image provenait de groupes de pixels souvent à la limite du critère d'acceptabilité de la règle.
-```{figure} imgs/mountains/32x32_gride.png
+```{figure} imgs/resolution/mountains/32x32_gride.png
 ---
 class: with border
 ---
@@ -173,190 +173,190 @@ Pour tous les exercices de cette série, c'est la règle suivante qui s'applique
         Si >=2/4 px sont noir -> nouveau pixel noir
 :::
 1. 
-```{figure} imgs/exo/bw/1/1.png
+```{figure} imgs/resolution/exo/bw/1/1.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/bw/1/1_wrong.png
+```{figure} imgs/resolution/exo/bw/1/1_wrong.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/bw/1/1_right.png
+```{figure} imgs/resolution/exo/bw/1/1_right.png
 ---
 width: 200
 ---
 (B)
 ```
 2. 
-```{figure} imgs/exo/bw/1/2.png
+```{figure} imgs/resolution/exo/bw/1/2.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/bw/1/2_right.png
+```{figure} imgs/resolution/exo/bw/1/2_right.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/bw/1/2_wrong.png
+```{figure} imgs/resolution/exo/bw/1/2_wrong.png
 ---
 width: 200
 ---
 (B)
 ```
 3. 
-```{figure} imgs/exo/bw/1/3.png
+```{figure} imgs/resolution/exo/bw/1/3.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/bw/1/3_right.png
+```{figure} imgs/resolution/exo/bw/1/3_right.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/bw/1/3_wrong.png
+```{figure} imgs/resolution/exo/bw/1/3_wrong.png
 ---
 width: 200
 ---
 (B)
 ```
 4. 
-```{figure} imgs/exo/bw/1/4.png
+```{figure} imgs/resolution/exo/bw/1/4.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/bw/1/4_wrong.png
+```{figure} imgs/resolution/exo/bw/1/4_wrong.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/bw/1/4_right.png
+```{figure} imgs/resolution/exo/bw/1/4_right.png
 ---
 width: 200
 ---
 (B)
 ```
 5. 
-```{figure} imgs/exo/bw/1/5.png
+```{figure} imgs/resolution/exo/bw/1/5.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/bw/1/5_right.png
+```{figure} imgs/resolution/exo/bw/1/5_right.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/bw/1/5_wrong.png
+```{figure} imgs/resolution/exo/bw/1/5_wrong.png
 ---
 width: 200
 ---
 (B)
 ```
 6. 
-```{figure} imgs/exo/bw/1/6.png
+```{figure} imgs/resolution/exo/bw/1/6.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/bw/1/6_wrong.png
+```{figure} imgs/resolution/exo/bw/1/6_wrong.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/bw/1/6_right.png
+```{figure} imgs/resolution/exo/bw/1/6_right.png
 ---
 width: 200
 ---
 (B)
 ```
 7. 
-```{figure} imgs/exo/bw/1/7.png
+```{figure} imgs/resolution/exo/bw/1/7.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 4.
 ```
-```{figure} imgs/exo/bw/1/7_wrong.png
+```{figure} imgs/resolution/exo/bw/1/7_wrong.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/bw/1/7_right.png
+```{figure} imgs/resolution/exo/bw/1/7_right.png
 ---
 width: 200
 ---
 (B)
 ```
 8. 
-```{figure} imgs/exo/bw/1/8.png
+```{figure} imgs/resolution/exo/bw/1/8.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 4.
 ```
-```{figure} imgs/exo/bw/1/8_wrong.png
+```{figure} imgs/resolution/exo/bw/1/8_wrong.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/bw/1/8_right.png
+```{figure} imgs/resolution/exo/bw/1/8_right.png
 ---
 width: 200
 ---
 (B)
 ```
 9. 
-```{figure} imgs/exo/bw/1/9.png
+```{figure} imgs/resolution/exo/bw/1/9.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/bw/1/9_right.png
+```{figure} imgs/resolution/exo/bw/1/9_right.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/bw/1/9_wrong.png
+```{figure} imgs/resolution/exo/bw/1/9_wrong.png
 ---
 width: 200
 ---
 (B)
 ```
 10. 
-```{figure} imgs/exo/bw/1/10.png
+```{figure} imgs/resolution/exo/bw/1/10.png
 ---
 width: 200
 ---
 À comprimer avec un facteur 2.
 ```
-```{figure} imgs/exo/bw/1/10_wrong.png
+```{figure} imgs/resolution/exo/bw/1/10_wrong.png
 ---
 width: 200
 ---
 (A)
 ```
-```{figure} imgs/exo/bw/1/10_right.png
+```{figure} imgs/resolution/exo/bw/1/10_right.png
 ---
 width: 200
 ---
@@ -373,75 +373,70 @@ Cette série d'exercices permet de mettre entre autre une chose en avant: La com
 Cette série d'exercices varie selon si le script est en version papier ou en version web. Dans les deux cas des solutions seront proposées aux élèves. Néanmoins, la version web étant automatisée, la correction sera plus terre-à-terre.
 :::
 
-:::{raw} html
-
-```{tip}
-Dans cette deuxième série d'exercices, vous allez pouvoir vous entrainez sur l'ordinateur directement. La fenêtre d'exécution en dessous, une fois lancée, vous montrera une image et vous devrez la compresser. Vous n'avez qu'à faire un clic pour passer de blanc à noir et inversemment. Il est possible de relancer le programme pour avoir une nouvelle image.
-```
-
-<iframe src="https://brython.info/gallery/phaser.html" width="100%" height="600"></iframe>
-
-:::
 ```{admonition} Consigne
 Pour cette série d'exercices, vous aurez besoin d'une feuille cadrillée ainsi que de quoi écrire. Pour chacune des images qui suivront, vous devrez effectuer leur conversion avec un facteur 2.
 ```
 
-1. 
-```{figure} imgs/exo/bw/2/latex/1.png
+1.
+
+
+```{figure} imgs/resolution/exo/bw/2/latex/1.png
 ---
 width: 300
 ---
 ```
-2.  
-```{figure} imgs/exo/bw/2/latex/2.png
+2.
+
+
+```{figure} imgs/resolution/exo/bw/2/latex/2.png
 ---
 width: 300
 ---
 ```
 3. 
-```{figure} imgs/exo/bw/2/latex/3.png
+```{figure} imgs/resolution/exo/bw/2/latex/3.png
 ---
 width: 300
 ---
 ```
 4. 
-```{figure} imgs/exo/bw/2/latex/4.png
+```{figure} imgs/resolution/exo/bw/2/latex/4.png
 ---
 width: 300
 ---
 ```
 5. 
-```{figure} imgs/exo/bw/2/latex/5.png
+```{figure} imgs/resolution/exo/bw/2/latex/5.png
 ---
 width: 300
 ---
 ```
 6. 
-```{figure} imgs/exo/bw/2/latex/6.png
+```{figure} imgs/resolution/exo/bw/2/latex/6.png
 ---
 width: 300
 ---
 ```
 7. 
-```{figure} imgs/exo/bw/2/latex/7.png
+```{figure} imgs/resolution/exo/bw/2/latex/7.png
 ---
 width: 300
 ---
 ```
 8. 
-```{figure} imgs/exo/bw/2/latex/8.png
+```{figure} imgs/resolution/exo/bw/2/latex/8.png
 ---
 width: 300
 ---
 ```
 9. 
-```{figure} imgs/exo/bw/2/latex/9.png
+```{figure} imgs/resolution/exo/bw/2/latex/9.png
 ---
 width: 300
 ---
 ```
 10. 
-```{figure} imgs/exo/bw/2/latex/10.png
+```{figure} imgs/resolution/exo/bw/2/latex/10.png
 ---
 width: 300
 ---
@@ -454,13 +449,13 @@ Les corrigés de ces exercices se trouvent en fin de chapitre.
 
 
 Jusqu'à présent, la compression d'images a été abordé très visuellement. Néanmoins, cela n'est faisable uniquement avec des images en noir et blanc, car dès que des nuances de gris apparraissent, il devient difficile de déterminer la nuance à appliquer. C'est pour cela que désormais les images seront affichées de deux façons: l'image en tant que telle et l'image représenté en une matrice de pixels. Pour reprendre l'exemple de l'image des montagnes, on obtiendrait ceci:
-```{figure} imgs/mountains/32x32.png
+```{figure} imgs/resolution/mountains/32x32.png
 ---
 width: 200
 ---
 Image visible.
 ```
-```{figure} imgs/mountains/32x32_px.png
+```{figure} imgs/resolution/mountains/32x32_px.png
 ---
 width: 200
 ---
@@ -509,16 +504,6 @@ Les corrigés de ces exercices se trouvent en fin de chapitre.
 Cette série d'exercices varie selon si le script est en version papier ou en version web. Dans les deux cas des solutions seront proposées aux élèves. Néanmoins, la version web étant automatisée, la correction sera plus terre-à-terre.
 :::
 
-:::{raw} html
-
-```{tip}
-Dans cette denière série d'exercices, vous allez pouvoir vous entrainez sur l'ordinateur directement. La fenêtre d'exécution en dessous, une fois lancée, vous montrera une image et vous devrez la compresser. Vous n'avez qu'à faire un clic pour passer de *0* à *1* et inversemment. Il est possible de relancer le programme pour avoir une nouvelle image.
-```
-
-<iframe src="https://brython.info/gallery/phaser.html" width="100%" height="600"></iframe>
-
-:::
-:::{raw} latex
 ```{admonition} Consigne
 Pour cette dernière série d'exercices, vous aurez besoin, comme pour la seconde série, d'une feuille cadrillée ainsi que de quoi écrire. Pour chacune des images qui suivront, vous devrez effectuer leur conversion avec le facteur donné, cette fois-ci en indiquant la valeur de chaque pixel.
 ```
@@ -536,12 +521,11 @@ Pour cette dernière série d'exercices, vous aurez besoin, comme pour la second
 ```{warning}
 Les corrigés de ces exercices se trouvent en fin de chapitre.
 ```
-:::
 
 ## Images en nuances de gris
 Maintenant que vous maîtrisez la représentation des images avec des valeurs et plus des couleurs, il est possible de s'attaquer à la compression d'images en nuances de gris. Il existe deux différences entre la compression en noir/blanc et celle en nuance de gris:
 * Les valeurs ne sont plus *0* pour blanc et *1* pour noir, mais *0* pour noir et *15* pour blanc, chaque pallier intermédiare correspondant à un niveau de gris. Cette différence est juste due au format utilisé. Les images en noir/blanc étaient des fichiers PBM alors celles en nuances de gris sont en PGM.
-```{figure} imgs/exemples/nuances.png
+```{figure} imgs/resolution/exemples/nuances.png
 ---
 class: with border
 ---
@@ -589,16 +573,6 @@ Ces exercices ont permis de mettre en lumière quelque-chose, les images semblen
 Cette série d'exercices varie selon si le script est en version papier ou en version web. Dans les deux cas des solutions seront proposées aux élèves. Néanmoins, la version web étant automatisée, la correction sera plus terre-à-terre.
 :::
 
-:::{raw} html
-
-```{tip}
-Dans cette deuxième série d'exercices, vous allez pouvoir vous entrainez sur l'ordinateur directement. La fenêtre d'exécution en dessous, une fois lancée, vous montrera une image et vous devrez la compresser. Vous n'avez qu'à faire un clic pour passer de *0* à *1* et inversemment. Il est possible de relancer le programme pour avoir une nouvelle image.
-```
-
-<iframe src="https://brython.info/gallery/phaser.html" width="100%" height="600"></iframe>
-
-:::
-:::{raw} latex
 ```{admonition} Consigne
 Pour cette deuxième série d'exercices, vous aurez besoin, comme pour certaines séries de la compression en noir/blanc, d'une feuille cadrillée ainsi que de quoi écrire. Pour chacune des images qui suivront, vous devrez effectuer leur conversion avec le facteur donné, cette fois-ci en indiquant la valeur de chaque pixel.
 ```
@@ -616,7 +590,6 @@ Pour cette deuxième série d'exercices, vous aurez besoin, comme pour certaines
 ```{warning}
 Les corrigés de ces exercices se trouvent en fin de chapitre.
 ```
-:::
 
 ## La compression d'images en couleur
 Pour finir ce chapitre sur la compression d'images par réduction de résolution, nous allons nous intéressé aux images en couleur. Le format utilisé est le PPM, ce dernier fonctionne comme le PBM et le PGM, la seule différence étant qu'il ne représente plus les couleurs des pixels par un nombre mais par une combinaison de trois nombre.
@@ -674,16 +647,6 @@ Les corrigés de ces exercices se trouvent en fin de chapitre.
 Cette série d'exercices varie selon si le script est en version papier ou en version web. Dans les deux cas des solutions seront proposées aux élèves. Néanmoins, la version web étant automatisée, la correction sera plus terre-à-terre.
 :::
 
-:::{raw} html
-
-```{tip}
-Dans cette dernière série d'exercices, vous allez pouvoir vous entrainez sur l'ordinateur directement. La fenêtre d'exécution en dessous, une fois lancée, vous montrera une image et vous devrez la compresser. Vous n'avez qu'à faire un clic pour passer de *0* à *1* et inversemment. Il est possible de relancer le programme pour avoir une nouvelle image.
-```
-
-<iframe src="https://brython.info/gallery/phaser.html" width="100%" height="600"></iframe>
-
-:::
-:::{raw} latex
 ```{admonition} Consigne
 Pour cette dernière série d'exercices, vous aurez besoin, comme pour certaines séries de la compression en noir/blanc, d'une feuille cadrillée ainsi que de quoi écrire. Pour chacune des images qui suivront, vous devrez effectuer leur conversion avec le facteur donné, cette fois-ci en indiquant la valeur de chaque pixel.
 ```
@@ -701,4 +664,4 @@ Pour cette dernière série d'exercices, vous aurez besoin, comme pour certaines
 ```{warning}
 Les corrigés de ces exercices se trouvent en fin de chapitre.
 ```
-:::
+## Conclusion
