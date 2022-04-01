@@ -11,7 +11,6 @@ Cours d'introduction à la compression d'images
     :caption: Table des matières
 
     0_introduction.md
-    1_processus.md
     2_objectifs.md
     3_resolution.md
     4_motifs.md

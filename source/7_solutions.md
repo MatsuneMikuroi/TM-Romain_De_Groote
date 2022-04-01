@@ -2,8 +2,6 @@
 ## Réduction de résolution
 ### Images en noir et blanc
 #### Série d'exercices 1
-##### Réponses
-Les bonnes réponses étaient
 1. (B)
 2. (A)
 3. (A)
@@ -14,8 +12,6 @@ Les bonnes réponses étaient
 8. (B)
 9. (A)
 10. (B)
-##### Explications
-
 #### Série d'exercices 2
 1. 
 ```{figure} imgs/exo/bw/2/latex/1_soluce.png
