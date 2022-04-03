@@ -1,5 +1,5 @@
 # Indentification de motifs
-Une autre méthode pour comprimer des données est d'identifier un pattern strict et de dire combien de fois ce dernier se répète. Reprenons notre exemple habituel en affichant une grille.
+Pour cette dernière de compresion, l'objectif est d'identifier des motifs strict et de dire combien de fois ce dernier se répète. Reprenons notre exemple habituel en affichant une grille.
 ```{figure} imgs/resolution/mountains/32x32_gride.png
 ```
 Chaque carreau contient 2 pixels, ce qui va nous aidez à compter. Par exemple, la première ligne est composée de 26 pixels blancs, codés *0*, et 6 pixels noirs, codés *1*. Il est possible de choisir un charactère qui n'est normalement pas afficher pour indiquer une multiplication. Choisissons la lettre *x* qui n'apparait normalement pas dans ce format. Il est possible de coder la première ligne
@@ -29,11 +29,11 @@ Ce dernier est composé de 8 lignes comprenant chacune 8 cases. À première vu,
         4(x1 x0)
         )
 
-De plus, nous avons au total 21 caratères alors que nous étions à 72 avant. L'espace que prend l'image sur le disque dur a diminué de 65%. Cela représente une quatité d'espace non négligeable. Il est important de noter que cette diminution est élever car l'exemple s'y prête bien. De plus, l'image est en noir et blanc, la couleur viendrait automatiquement rajouter de nombreux caratères inutiles. Ce genre de compression est bien plus efficaces avec de grandes images car l'effet se fera bien plus ressentir. 
+De plus, nous avons au total 21 caratères alors que nous étions à 72 avant. L'espace que prend l'image sur le disque dur a diminué de 65%. Cela représente une quatité d'espace non négligeable. Il est important de noter que cette diminution est élever car l'exemple s'y prête bien. De plus, l'image est en noir et blanc, la couleur viendrait automatiquement rajouter de nombreux caratères inutiles. Ce genre de compression est bien plus efficaces avec de grandes images car l'effet se fera bien plus ressentir.
 
 ### Série d'exercices
 :::{admonition} Consigne
-Une image quadrillée vous sera montré et vous devrez la comprimer en identifiant les motifs qui la compose.
+Une image quadrillée vous sera montré et vous devrez la comprimer en identifiant les motifs qui la compose. Il est nécessaire de la compresser au maximum.
  :::
 1
 ```{figure} imgs/motifs/exo/1.png

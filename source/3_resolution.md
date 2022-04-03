@@ -472,6 +472,16 @@ Nuancier du format PGM.
 
 
 En précisant cette règle, la compression des images en noir et blanc fonctionne toujours, néanmoins, il est désormais possible de l'appliquer aux images en nuances de gris.
+
+Regardons ce que cela donne si on rajoute des nuances de gris à notre montagne:
+
+```{figure} imgs/resolution/mountains/grey/32x32.png
+---
+class: with border
+---
+Paysage en 32px*32px.
+```
+
 ### Série d'exercices 1
 :::{admonition} Consigne
  Cette première série d'exercices ressemble à la première des images en noir/blanc. Une image vous sera montrée, vous devrez ensuite choisir entre deux versions compressées de cette image. Le facteur de compression sera toujours indiqué en dessous de la première image.
@@ -776,215 +786,8 @@ Représentations en valeurs RGB du carré coloré au dessus.
 
 Cette version finale de la règle permet donc de représenté 256^3 de couleur (256 nuances en rouge * 256 nuances en vert * 256 nuances en bleu).
 
+Pour mieux voir ce que cela donne au fur à mesure, reprennons l'exemple de notre chère montagne, mais cette fois-ci colorier:
 
-### Série d'exercices 1
-:::{admonition} Consigne
- Cette première série d'exercices ressemble à la première des images en noir/blanc. Une image vous sera montrée, vous devrez ensuite choisir entre deux versions compressées de cette image. Le facteur de compression sera toujours indiqué en dessous de la première image.
-:::
-:::{admonition} Règle de compression
----
-class: attention
----
-Pour tous les exercices de cette série, c'est la règle suivante qui s'applique:
-
-        Si >=2/4 px sont noir -> nouveau pixel noir
-:::
-
-
-1
-```{figure} imgs/resolution/exo/color/1/1.png
----
-width: 150
----
-À comprimer avec un facteur 2.
-```
-```{figure} imgs/resolution/exo/color/1/1_right.png
----
-width: 150
----
-(A)
-```
-```{figure} imgs/resolution/exo/color/1/1_wrong.png
----
-width: 150
----
-(B)
-```
-2
-```{figure} imgs/resolution/exo/color/1/2.png
----
-width: 150
----
-À comprimer avec un facteur 2.
-```
-```{figure} imgs/resolution/exo/color/1/2_wrong.png
----
-width: 150
----
-(A)
-```
-```{figure} imgs/resolution/exo/color/1/2_right.png
----
-width: 150
----
-(B)
-```
-3
-```{figure} imgs/resolution/exo/color/1/3.png
----
-width: 150
----
-À comprimer avec un facteur 2.
-```
-```{figure} imgs/resolution/exo/color/1/3_right.png
----
-width: 150
----
-(A)
-```
-```{figure} imgs/resolution/exo/color/1/3_wrong.png
----
-width: 150
----
-(B)
-```
-4
-```{figure} imgs/resolution/exo/color/1/4.png
----
-width: 150
----
-À comprimer avec un facteur 2.
-```
-```{figure} imgs/resolution/exo/color/1/4_wrong.png
----
-width: 150
----
-(A)
-```
-```{figure} imgs/resolution/exo/color/1/4_right.png
----
-width: 150
----
-(B)
-```
-5
-```{figure} imgs/resolution/exo/color/1/5.png
----
-width: 150
----
-À comprimer avec un facteur 2.
-```
-```{figure} imgs/resolution/exo/color/1/5_wrong.png
----
-width: 150
----
-(A)
-```
-```{figure} imgs/resolution/exo/color/1/5_right.png
----
-width: 150
----
-(B)
-```
-6
-```{figure} imgs/resolution/exo/color/1/6.png
----
-width: 150
----
-À comprimer avec un facteur 2.
-```
-```{figure} imgs/resolution/exo/color/1/6_wrong.png
----
-width: 150
----
-(A)
-```
-```{figure} imgs/resolution/exo/color/1/6_right.png
----
-width: 150
----
-(B)
-```
-7
-```{figure} imgs/resolution/exo/color/1/7.png
----
-width: 150
----
-À comprimer avec un facteur 4.
-```
-```{figure} imgs/resolution/exo/color/1/7_right.png
----
-width: 150
----
-(A)
-```
-```{figure} imgs/resolution/exo/color/1/7_wrong.png
----
-width: 150
----
-(B)
-```
-8
-```{figure} imgs/resolution/exo/color/1/8.png
----
-width: 150
----
-À comprimer avec un facteur 4.
-```
-```{figure} imgs/resolution/exo/color/1/8_right.png
----
-width: 150
----
-(A)
-```
-```{figure} imgs/resolution/exo/color/1/8_wrong.png
----
-width: 150
----
-(B)
-```
-9
-```{figure} imgs/resolution/exo/color/1/9.png
----
-width: 150
----
-À comprimer avec un facteur 2.
-```
-```{figure} imgs/resolution/exo/color/1/9_wrong.png
----
-width: 150
----
-(A)
-```
-```{figure} imgs/resolution/exo/color/1/9_right.png
----
-width: 150
----
-(B)
-```
-10
-```{figure} imgs/resolution/exo/color/1/10.png
----
-width: 150
----
-À comprimer avec un facteur 2.
-```
-```{figure} imgs/resolution/exo/color/1/10_wrong.png
----
-width: 150
----
-(A)
-```
-```{figure} imgs/resolution/exo/color/1/10_right.png
----
-width: 150
----
-(B)
-```
-
-```{warning}
-Les corrigés de ces exercices se trouvent en fin de chapitre.
-```
 
 
 ### Série d'exercices 2
