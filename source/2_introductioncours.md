@@ -1,0 +1,2 @@
+# Introduction au cours
+Le stockage de l'information est l'un des trois piliers de l'informatique avec la cryptographie et la correction d'information. De tout temps, il a fallu trouver des solutions pour stocker de manière la plus sûre un maximum d'informations, pour cela, il est primordial que ces informations prennent le moins de place possible afin de les stocker plus facilement. Avec l'arrivée d'internet puis des réseaux sociaux, cette facette à gagner encore en importance, les géants du net devant trouver un moyen de stocker toutes les données postées.
