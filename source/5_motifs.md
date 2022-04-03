@@ -41,7 +41,7 @@ Une image quadrillée vous sera montré et vous devrez la comprimer en identifia
 width: 150
 ---
 ```
-```{figure} imgs/motifs/practise.png
+```{figure} imgs/practise/blank.png
 ---
 width: 150
 ---
@@ -52,7 +52,7 @@ width: 150
 width: 150
 ---
 ```
-```{figure} imgs/motifs/practise.png
+```{figure} imgs/practise/blank.png
 ---
 width: 150
 ---
@@ -63,7 +63,7 @@ width: 150
 width: 150
 ---
 ``` 
-```{figure} imgs/motifs/practise.png
+```{figure} imgs/practise/blank.png
 ---
 width: 150
 ---
@@ -74,7 +74,7 @@ width: 150
 width: 150
 ---
 ```
-```{figure} imgs/motifs/practise.png
+```{figure} imgs/practise/blank.png
 ---
 width: 150
 ---
@@ -85,7 +85,7 @@ width: 150
 width: 150
 ---
 ```
-```{figure} imgs/motifs/practise.png
+```{figure} imgs/practise/blank.png
 ---
 width: 150
 ---
@@ -96,7 +96,7 @@ width: 150
 width: 150
 ---
 ```
-```{figure} imgs/motifs/practise.png
+```{figure} imgs/practise/blank.png
 ---
 width: 150
 ---
@@ -107,7 +107,7 @@ width: 150
 width: 150
 ---
 ```
-```{figure} imgs/motifs/practise.png
+```{figure} imgs/practise/blank.png
 ---
 width: 150
 ---
@@ -118,7 +118,7 @@ width: 150
 width: 150
 ---
 ```
-```{figure} imgs/motifs/practise.png
+```{figure} imgs/practise/blank.png
 ---
 width: 150
 ---
@@ -129,7 +129,7 @@ width: 150
 width: 150
 ---
 ```
-```{figure} imgs/motifs/practise.png
+```{figure} imgs/practise/blank.png
 ---
 width: 150
 ---
@@ -140,7 +140,7 @@ width: 150
 width: 150
 ---
 ```
-```{figure} imgs/motifs/practise.png
+```{figure} imgs/practise/blank.png
 ---
 width: 150
 ---

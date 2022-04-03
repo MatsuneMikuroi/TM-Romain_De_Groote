@@ -458,6 +458,8 @@ class: attention
 ---
 Toute la théorie concernant la façon dont l'ordinateur représente les images n'est applicable qu'au fichiers PBM, PGM et PPM (mêmes si ils de légèrent variations). Ces formats ont été retenu car la majorité des formats d'images ont leur propre manière de les stocker et coder. L'avantage des format PBM/PGM/PPM est qu'ils sont très peu comprimés mais très compréhensibles pour des néophyte. Ceux-ci représentant les pixels par des valeurs uniquement numériques et laissant facilement apparaître les images.
 
+
+
 ## Images en nuances de gris
 Maintenant que vous maîtrisez la représentation des images avec des valeurs et plus des couleurs, il est possible de s'attaquer à la compression d'images en nuances de gris. Il existe deux différences entre la compression en noir/blanc et celle en nuance de gris :
 * Les valeurs ne sont plus *0* pour blanc et *1* pour noir, mais *0* pour noir et *15* pour blanc, chaque pallier intermédiaire correspondant à un niveau de gris. Cette différence est juste due au format utilisé. Les images en noir/blanc étaient des fichiers PBM alors celles en nuances de gris sont en PGM.
@@ -479,8 +481,53 @@ Regardons ce que cela donne si on rajoute des nuances de gris à notre montagne:
 ---
 class: with border
 ---
-Paysage en 32px*32px.
+Paysage de 32px*32px en nuances de gris.
 ```
+
+L'ajout des nuances permet, comme il est facile de s'en douter, l'ajout de détail et de mieux différencier les différentes parties de l'image. Voyons voir ce qu'il se passe lorsque nous commençons la compression:
+
+```{figure} imgs/resolution/mountains/grey/16x16.png
+---
+class: with border
+---
+Paysage de 16px*16px en nuances de gris.
+```
+
+Premier changment remarquable par rapport à la compression en noir et blanc : il y a toujours des traces des oiseaux et de l'astre. Ces derniers sont caractérisés par des zones plus sombre. C'est explicable par le fait qu'ils était eux-mêmes plus sombres que le ciel sur lequel ils sont.
+
+```{figure} imgs/resolution/mountains/grey/8x8.png
+---
+class: with border
+---
+Paysage de 8px*8px en nuances de gris.
+```
+Cette deuxième compression permet de petit à petit créer un équilibre entre les zones sombres et les zones claires. Là où avec la compression en noir et blanc nous virions vite aux extrêmes, le simple ajout des 14 nuances de gris permet d'équillibrer ce ratio clair/foncé.
+
+```{figure} imgs/resolution/mountains/grey/4x4.png
+---
+class: with border
+---
+Paysage de 4px*4px en nuances de gris.
+```
+
+Même si nous avons déjà perdu une grande quantité d'informations, la forme initiale des montagnes est toujours plus ou moins discernable, chose qui était impossible avec la compression en noir est blanc.
+
+```{figure} imgs/resolution/mountains/grey/2x2.png
+---
+class: with border
+---
+Paysage de 2px*2px en nuances de gris.
+```
+Arrivé à ce stade, nous nous retrouvons dans un cas similaire à la compression en noir et blanc. L'information originel a été perdu. Avant cette étape, si l'image avait été légendé "montagnes" alors il aurait été possible de les distinguer, chose qui n'est plus possible désormais.
+
+```{figure} imgs/resolution/mountains/grey/1x1.png
+---
+class: with border
+---
+Paysage de 1px*1px en nuances de gris.
+```
+
+Finalement, nous allons pouvoir faire une petite comparaison finale entre cette dernière image et la dernière de notre compression en noir et blanc. Lors de la première compression, nous avions obtenu un pixel noir et nous en avions déduis que notre règle faussait tellement l'image qu'elle en avait inversé ses proportions. Or, dans cette deuxième compression, le pixel semble être d'un gris plutôt moyen, ce qui correspondait aux nuances de notre image de départ. En effet, elle tirait aussi bien dans des tons sombres que dans des tons clairs. En ajoutant des nuances nous évitons alors de trop déformer l'information.
 
 ### Série d'exercices 1
 :::{admonition} Consigne
@@ -494,7 +541,6 @@ Pour tous les exercices de cette série, c'est la règle suivante qui s'applique
 
         int(valeur totale/nombre de pixel total) = valeur du nouveau pixel
 :::
-
 
 1
 ```{figure} imgs/resolution/exo/grey/1/1.png
@@ -691,7 +737,7 @@ width: 150
 Les corrigés de ces exercices se trouvent en fin de chapitre.
 ```
 
-Ces exercices ont permis de mettre en lumière quelque-chose, les images semblent mieux proportionnées. Là où la compression en noir blanc avait tendance à vite perdre des informations, la compression en nuances de gris garde toujours une trace de tous pixels. Des zones plus claires indiquant la présence de pixels plus clairs en moyenne. Cela permet aussi d'éviter un changement de proportion entre clair et obscur. Là où nous avions vu que notre règle pouvait changer la proportion de pixels noirs et de pixels blancs, la compression en nuance de gris ne pourra donner un pixel noir comme compression finale si l'image était majoritairement blanche.
+Ces exercices ont permis de mettre en lumière quelque-chose, malgrés la gamme de couleurs que nous avons, des "annomalies" subviennent quand même. Nous pouvons prendre pour exemple l'item 4, le "A". Comme les nuances sont très proches l'images s'efface partiellement. La meilleures solution dans ce cas est d'augmenter le contraste entre les couleurs. Celles tirant vers le blanc seront éclaircit et celles tirant vers le noir seront assombrit.
 
 ### Série d'exercices 2
 :::{warning}
@@ -767,14 +813,14 @@ Les corrigés de ces exercices se trouvent en fin de chapitre.
 ```
 
 ## La compression d'images en couleur
-Pour finir ce chapitre sur la compression d'images par réduction de résolution, nous allons nous intéressé aux images en couleur. Le format utilisé est le PPM, ce dernier fonctionne comme le PBM et le PGM, la seule différence étant qu'il ne représente plus les couleurs des pixels par un nombre mais par une combinaison de trois nombre.
+Pour finir ce chapitre sur la compression d'images par réduction de résolution, nous allons nous intéresser aux images en couleur. Le format utilisé est le PPM, ce dernier fonctionne comme le PBM et le PGM, la seule différence étant qu'il ne représente plus les couleurs des pixels par un nombre mais par une combinaison de trois nombre.
 ```{figure} imgs/resolution/exemples/color.png
 9 couleurs "simples" en RGB.
 ```
 L'image ci-dessus représenté comme une matrice dont les valeurs sont données en RGB. Petit point d'optique:
 
 La lumière est composée de particules nommées photons, chacun possèdant une certaine longueur d'onde. Lorsqu'un photon vient taper l'oeil humain, il active des cellules réceptrices. Néanmoins, avec des photons dans les longueurs d'ondes des rouges, verts et bleus, il est en fait possible de produire toutes les couleurs visibles. Les pixels étant finalement que trois leds disposées côte à côte. Un pixel est noir lorsque toutes ses leds sont éteintes, il est blanc lorsqu'elles sont toutes allumées. Enfin, il est dans une nuance de gris si l'intensité en rouge est égale à celle en verte et en bleue. Sur l'image au-dessus (de gauche à droite), le premier carreau n'est composé que de pixels allumé sur la leds rouge uniquement. Le second des pixels dont seuls les leds vertes sont allumées et la troisième dont ce sont les leds bleues. Pour la seconde ligne, pour le carreau jaune ce sont les leds rouges et vertes qui sont allumées, pour le cyan les leds vertes et bleues, pour le magenta les leds bleues et rouges. Enfin, la troisième ligne est composée d'un carreau blanc, donc toutes ses leds sont allumées au maximum; d'un carreau gris, dont toutes les leds sont à la moitié de leur intensité maxiamle; finalement un carreau noir dont l'entièreté des leds sont éteintes. Représenté sous forme d'un tableau, nous obtenons ceci:
-```{figure} imgs/exemples/colors_values.png
+```{figure} imgs/resolution/exemples/colors_values.png
 Représentations en valeurs RGB du carré coloré au dessus.
 ```
  Cependant, comme dit précédement, le format en couleur représente ses pixels sous formes d'un trio de valeur. Pour comprimer les images il faut alors reprendre la règle que nous avions utilisé pour la compression en nuances de gris et la modifier légèrement.
@@ -787,10 +833,57 @@ Représentations en valeurs RGB du carré coloré au dessus.
 Cette version finale de la règle permet donc de représenté 256^3 de couleur (256 nuances en rouge * 256 nuances en vert * 256 nuances en bleu).
 
 Pour mieux voir ce que cela donne au fur à mesure, reprennons l'exemple de notre chère montagne, mais cette fois-ci colorier:
+```{figure} imgs/resolution/mountains/couleurs/32x32.png
+---
+class: with border
+---
+Paysage de 32px*32px colorisé.
+```
+Cette image resemble désormais à une vraie photographie en 32px par 32px. L'ajout des couleurs permet encore une fois de rajouter des nuances à l'images. Passons à notre compression.
 
+```{figure} imgs/resolution/mountains/couleurs/16x16.png
+---
+class: with border
+---
+Paysage de 16px*16px colorisé.
+```
+Comme pour la compression en nuance de gris, les détails sont conservés car ayant forément un impact sur la nouvelle valeur du pixel.
 
+```{figure} imgs/resolution/mountains/couleurs/8x8.png
+---
+class: with border
+---
+Paysage de 8px*8px colorisé.
+```
+Pour cette image il n'y a pas vraiment de nouveau commentaire à faire, les montagnes sont toujours reconnaissable et une simple légende suffit à comprendre ce qu'elle représente.
 
-### Série d'exercices 2
+```{figure} imgs/resolution/mountains/couleurs/4x4.png
+---
+class: with border
+---
+Paysage de 4px*4px colorisé.
+```
+
+Pour ce niveau de compression, l'image en nuance de gris permettait une meilleure reconnaissance de l'image. Cela peut parraître un peu contradictoire au premier abord mais il y a belle est bien une logique derrière. La raison pour laquelle la verion en nuance laissant encore apparaître ce détail est en soi contradictoire, c'est en fait le manque de nuance possible qui en est à l'origine. Le sommet de la montagne se serait en effet dissipé s'il y avait plus de nuances disponible. L'ajout de plusieurs millions de couleurs différentes permets de contrer ce problème, mais, paradoxalement, réduit la lecture de l'image à ce stade de compression.
+
+```{figure} imgs/resolution/mountains/couleurs/2x2.png
+---
+class: with border
+---
+Paysage de 2px*2px colorisé.
+```
+
+Comme d'habitude, arrivé à ce stade nous ne pouvons plus rien dire de l'image d'origine mis à part qu'elle était foncé en bas et comportait majoritairement des teintes de bleu en haut.
+
+```{figure} imgs/resolution/mountains/couleurs/1x1.png
+---
+class: with border
+---
+Paysage de 1px*1px colorisé.
+```
+Finalement, le petit pixel restant à la fin de ces compressions nous renseigne encore un peu sur les couleurs utilisées. Nous pouvons donc deviner que l'image comportait du bleu plutôt terne et/ou qu'il a été terni par des nuances foncées. Ces deux théories peuvent se confondre parmis d'innombrables autres, la multiplication des nuances permettant la mutltiplication des images rendant le même résultat.
+
+### Série d'exercices
 ```{admonition} Consigne
 Pour cette dernière série d'exercices, vous devrez effectuer la conversion des images suivantes avec le facteur donné, cette fois-ci en indiquant la valeur de chaque pixel.
 ```
