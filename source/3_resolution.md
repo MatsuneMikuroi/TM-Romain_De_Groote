@@ -715,31 +715,31 @@ Finalement, le petit pixel restant à la fin de ces compressions nous renseigne 
 Pour cette dernière série d'exercices, vous devrez effectuer la conversion des images suivantes avec le facteur donné, cette fois-ci en indiquant la valeur de chaque pixel.
 ```
 1
-```{figure} imgs/resolution/exo/color/2/1.png
+```{figure} imgs/resolution/exo/color/1.png
 ---
 width: 200
 ---
 ```
 2
-```{figure} imgs/resolution/exo/color/2/2.png
+```{figure} imgs/resolution/exo/color/2.png
 ---
 width: 200
 ---
 ```
 3
-```{figure} imgs/resolution/exo/color/2/3.png
+```{figure} imgs/resolution/exo/color/3.png
 ---
 width: 200
 ---
 ``` 
 4
-```{figure} imgs/resolution/exo/color/2/4.png
+```{figure} imgs/resolution/exo/color/4.png
 ---
 width: 200
 ---
 ```
 5
-```{figure} imgs/resolution/exo/color/2/5.png
+```{figure} imgs/resolution/exo/color/5.png
 ---
 width: 200
 ---
@@ -749,4 +749,4 @@ width: 200
 Les corrigés de ces exercices se trouvent à la fin du cours.
 ```
 ## Conclusion
-Pour conclure ce chapitre, la compression par réduction de résolution est une façon de gagner facilement de l'espace de stockage, en effet, le nouveau fichier prenant X^2 de fois moins de place que le fichier d'origine. De plus, il peut être assez simple de coder un algorithme pour compresser des images de cette façon. Néanmoins, le gros point négatif de cette méthode est la perte d'information. En réduisant la résolution, des informations se perdent irrémédiablement. 
+Pour conclure ce chapitre, la compression par réduction de résolution est une façon de gagner facilement de l'espace de stockage, en effet, le nouveau fichier prenant X^2 de fois moins de place que le fichier d'origine. De plus, il peut être assez simple de coder un algorithme pour compresser des images de cette façon. Néanmoins, le gros point négatif de cette méthode est la perte d'information. En réduisant la résolution, des informations se perdent irrémédiablement.
