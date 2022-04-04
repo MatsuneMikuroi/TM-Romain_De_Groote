@@ -74,75 +74,63 @@ width: 200
 ---
 ``` 
 ### Images en nuances de gris
-#### Série d'exercices 1
-1 (A)
-2 (B)
-3 (A)
-4 (B)
-5 (B)
-6 (B)
-7 (A)
-8 (A)
-9 (B)
-10 (B)
-
-#### Série d'exercices 2
+#### Série d'exercices
 1
-```{figure} imgs/resolution/exo/grey/2/1_soluce.png
+```{figure} imgs/resolution/exo/grey/1_soluce.png
 ---
 width: 200
 ---
 ```
 2
-```{figure} imgs/resolution/exo/grey/2/2_soluce.png
+```{figure} imgs/resolution/exo/grey/2_soluce.png
 ---
 width: 200
 ---
 ```
 3
-```{figure} imgs/resolution/exo/grey/2/3_soluce.png
+```{figure} imgs/resolution/exo/grey/3_soluce.png
 ---
 width: 200
 ---
 ```
 4
-```{figure} imgs/resolution/exo/grey/2/4_soluce.png
+```{figure} imgs/resolution/exo/grey/4_soluce.png
 ---
 width: 200
 ---
 ```
 5
-```{figure} imgs/resolution/exo/grey/2/5_soluce.png
+```{figure} imgs/resolution/exo/grey/5_soluce.png
 ---
 width: 200
 ---
 ```
 6
-```{figure} imgs/resolution/exo/grey/2/6_soluce.png
+```{figure} imgs/resolution/exo/grey/6_soluce.png
 ---
 width: 200
 ---
 ```
 7
-```{figure} imgs/resolution/exo/grey/2/7_soluce.png
+```{figure} imgs/resolution/exo/grey/7_soluce.png
 ---
 width: 200
 ---
 ```
 8
-```{figure} imgs/resolution/exo/grey/2/8_soluce.png
+```{figure} imgs/resolution/exo/grey/8_soluce.png
 ---
 width: 200
 ---
 ```
 9
-```{figure} imgs/resolution/exo/grey/2/9_soluce.png
+```{figure} imgs/resolution/exo/grey/9_soluce.png
 ---
 width: 200
 ---
 ```
 10
-```{figure} imgs/resolution/exo/grey/2/10_soluce.png
+```{figure} imgs/resolution/exo/grey/10_soluce.png
 ---
 width: 200
 ---
@@ -151,65 +139,35 @@ width: 200
 ### Images en couleur
 #### Série d'exercices
 1
-```{figure} imgs/resolution/exo/color/2/1_soluce.png
+```{figure} imgs/resolution/exo/color/1_soluce.png
 ---
 width: 200
 ---
 ```
 2
-```{figure} imgs/resolution/exo/color/2/2_soluce.png
+```{figure} imgs/resolution/exo/color/2_soluce.png
 ---
 width: 200
 ---
 ```
 3
-```{figure} imgs/resolution/exo/color/2/3_soluce.png
+```{figure} imgs/resolution/exo/color/3_soluce.png
 ---
 width: 200
 ---
 ```
 4
-```{figure} imgs/resolution/exo/color/2/4_soluce.png
+```{figure} imgs/resolution/exo/color/4_soluce.png
 ---
 width: 200
 ---
 ```
 5
-```{figure} imgs/resolution/exo/color/2/5_soluce.png
+```{figure} imgs/resolution/exo/color/5_soluce.png
 ---
 width: 200
 ---
 ```
-6
-```{figure} imgs/resolution/exo/color/2/6_soluce.png
----
-width: 200
----
-```
-7
-```{figure} imgs/resolution/exo/color/2/7_soluce.png
----
-width: 200
----
-```
-8
-```{figure} imgs/resolution/exo/color/2/8_soluce.png
----
-width: 200
----
-```
-9
-```{figure} imgs/resolution/exo/color/2/9_soluce.png
----
-width: 200
----
-```
-10
-```{figure} imgs/resolution/exo/color/2/10_soluce.png
----
-width: 200
----
-``` 
 
 
 ## Réduction du nombre de couleurs
@@ -244,36 +202,6 @@ width: 200
 width: 200
 ---
 ```
-6
-```{figure} imgs/couleurs/exo/6_soluce.png
----
-width: 200
----
-```
-7
-```{figure} imgs/couleurs/exo/7_soluce.png
----
-width: 200
----
-```
-8
-```{figure} imgs/couleurs/exo/8_soluce.png
----
-width: 200
----
-```
-9
-```{figure} imgs/couleurs/exo/9_soluce.png
----
-width: 200
----
-```
-10
-```{figure} imgs/couleurs/exo/10_soluce.png
----
-width: 200
----
-``` 
 
 
 ## Identification de motifs
