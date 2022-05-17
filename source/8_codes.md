@@ -7,7 +7,7 @@ Pour comprendre le fonctionnement des algorithmes suivants, il est conseillé d'
 :::
 
 ### Lecture des images
-Dans ce chapitre,  les images utilisés sont sous format PBM, PGM et PPM. Ces formats ont deux particulartié intéresantes:
+Dans ce chapitre, les images utilisés sont sous format PBM, PGM et PPM. Ces formats ont deux particulartié intéresantes:
 1. Il est possible de les transformer en fichier *.txt* juste en les renommant.
 2. Ces fichiers *.txt* se présentent sous la forme suivante:
 ```{figure} imgs/exemples/txt.png
@@ -25,7 +25,7 @@ Le défi suivant a été de développer un algorithme de compression d'images. J
     Si en couleur:
         -> arondi à l'entier la moyenne des valeurs RGB des pixels
 
-Pour cela il a fallut définir une fonction ayant comme paramètre une *list*, un ratio de compression sous forme de *float* et un format sous forme de *string*. Le tout retournant une *list*.
+Pour cela il a fallu définir une fonction ayant comme paramètre une *list*, un ratio de compression sous forme de *float* et un format sous forme de *string*. Le tout retournant une *list*.
 ```python
 def compres(img:list, ratio:float, _format:str) -> list:
 ```

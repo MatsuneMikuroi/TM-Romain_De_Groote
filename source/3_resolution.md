@@ -2,7 +2,6 @@
 ## Représentation des images
 Avant de commencer à s'attaquer à la compression pure, il est bon de comprendre la manière dont l'ordinateur représente des images.
 
-
 De nos jours, tout a été numérisé. Or, contrairement à une photo prise par un appareil polaroid, qui reproduit exactement la réalité, l’ordinateur est limité dans sa représentation des images. Il ne peut pas par exemple dessiner de cercle. Cela est dû au fait que pour afficher quelque chose, l’ordinateur allume des minuscules leds formant une matrice rectangulaire. Il est d’ailleurs possible, suivant votre niveau de vue, de les distinguer si vous êtes sur ordinateur. Sinon, voici une image dont les carrés sont respectivement de 64, 32, 16, 8, 4, 2 et 1 pixels.
 
 ```{figure} imgs/resolution/exemples/pixel.png
@@ -366,7 +365,7 @@ width: 150
 Les corrigés de ces exercices se trouvent à la fin du cours.
 ```
 
-Cette série d'exercices permet de mettre entre autre une chose en avant : la compression des "cercles". Ceux-ci ont tendance à vite partiellement s'effacer lorsqu'on les comprime et qu'ils sont trop fins. Pour éviter ce problème, il peut être judicieux d'avoir des contours assez marqués pour toute forme un peu courbée. De plus, les petits détails ont le même problème.
+Cette série d'exercices permet de mettre entre autres une chose en avant : la compression des "cercles". Ceux-ci ont tendance à vite partiellement s'effacer lorsqu'on les comprime et qu'ils sont trop fins. Pour éviter ce problème, il peut être judicieux d'avoir des contours assez marqués pour toute forme un peu courbée. De plus, les petits détails ont le même problème.
 
 ### Série d'exercices 2
 ```{admonition} Consigne
@@ -452,14 +451,13 @@ width: 150
 Image "vue" par l'ordinateur.
 ```
 
-Il est possbile de voir que l'ordinateur représente les pixels blancs par des *0* et les pixels noirs par des *1*
+Il est possible de voir que l'ordinateur représente les pixels blancs par des *0* et les pixels noirs par des *1*
 :::{admonition} Format utilisé
 ---
 class: attention
 ---
-Toute la théorie concernant la façon dont l'ordinateur représente les images n'est applicable qu'au fichiers PBM, PGM et PPM (même s'ils ont de légères variations). Ces formats ont été retenus, car la majorité des formats d'images ont leur propre manière de les stocker et de coder. L'avantage des formats PBM/PGM/PPM est qu'ils sont très peu comprimés mais très compréhensibles pour des néophytes. Ceux-ci représentant les pixels par des valeurs uniquement numériques et laissant facilement apparaître les images.
+Toute la théorie concernant la façon dont l'ordinateur représente les images n'est applicable qu'aux fichiers PBM, PGM et PPM (même s'ils ont de légères variations). Ces formats ont été retenus, car la majorité des formats d'images ont leur propre manière de les stocker et de coder. L'avantage des formats PBM/PGM/PPM est qu'ils sont très peu comprimés mais très compréhensibles pour des néophytes. Ceux-ci représentant les pixels par des valeurs uniquement numériques et laissant facilement apparaître les images.
 :::
-
 
 ## Images en nuances de gris
 Maintenant que vous maîtrisez la représentation des images avec des valeurs et plus des couleurs, il est possible de s'attaquer à la compression d'images en nuances de gris. Il existe deux différences entre la compression en noir/blanc et celle en nuance de gris :
@@ -472,7 +470,6 @@ Nuancier du format PGM.
 ```
 * La règle de compression à laquelle vous êtes habituée va légèrement se complexifier :
         On divise la somme des valeurs des pixels par le nombre de pixel, puis on arrondi le tout à l'entier le plus proche (X.5 s'arrondi à l'entier supérieur).
-
 
 En précisant cette règle, la compression des images en noir et blanc fonctionne toujours, néanmoins, il est désormais possible de l'appliquer aux images en nuances de gris.
 
@@ -494,7 +491,7 @@ class: with border
 Paysage de 16px*16px en nuances de gris.
 ```
 
-Premier changent remarquable par rapport à la compression en noir et blanc : il y a toujours des traces des oiseaux et de l'astre. Ces derniers sont caractérisés par des zones plus sombres. C'est explicable par le fait qu'ils était eux-mêmes plus sombres que le ciel sur lequel ils sont.
+Premier changent remarquable par rapport à la compression en noir et blanc : il y a toujours des traces des oiseaux et de l'astre. Ces derniers sont caractérisés par des zones plus sombres. C'est explicable par le fait qu’ils étaient eux-mêmes plus sombres que le ciel sur lequel ils sont.
 
 ```{figure} imgs/resolution/mountains/grey/8x8.png
 ---
@@ -551,7 +548,6 @@ width: 150
 À comprimer avec un facteur 2.
 ```
 
-
 2
 ```{figure} imgs/resolution/exo/grey/2.png
 ---
@@ -559,7 +555,6 @@ width: 150
 ---
 À comprimer avec un facteur 2.
 ```
-
 
 3
 ```{figure} imgs/resolution/exo/grey/3.png
@@ -569,7 +564,6 @@ width: 150
 À comprimer avec un facteur 2.
 ```
 
-
 4
 ```{figure} imgs/resolution/exo/grey/4.png
 ---
@@ -577,7 +571,6 @@ width: 150
 ---
 À comprimer avec un facteur 2.
 ```
-
 
 5
 ```{figure} imgs/resolution/exo/grey/5.png
@@ -587,7 +580,6 @@ width: 150
 À comprimer avec un facteur 2.
 ```
 
-
 6
 ```{figure} imgs/resolution/exo/grey/6.png
 ---
@@ -595,7 +587,6 @@ width: 150
 ---
 À comprimer avec un facteur 2.
 ```
-
 
 7
 ```{figure} imgs/resolution/exo/grey/7.png
@@ -605,7 +596,6 @@ width: 150
 À comprimer avec un facteur 4.
 ```
 
-
 8
 ```{figure} imgs/resolution/exo/grey/8.png
 ---
@@ -614,7 +604,6 @@ width: 150
 À comprimer avec un facteur 2.
 ```
 
-
 9
 ```{figure} imgs/resolution/exo/grey/9.png
 ---
@@ -622,7 +611,6 @@ width: 150
 ---
 À comprimer avec un facteur 4.
 ```
-
 
 10
 ```{figure} imgs/resolution/exo/grey/10.png
@@ -637,7 +625,6 @@ Les corrigés de ces exercices se trouvent à la fin du cours.
 ```
 
 Ces exercices ont permis de mettre en lumière quelque chose, malgré la gamme de couleurs que nous avons, des "anomalies" subviennent quand même et des images s'effacent. Nous pouvons prendre pour exemple l'item 4, le "A". Comme les nuances sont très proches l'image s'efface partiellement. La meilleure solution dans ce cas est d'augmenter le contraste entre les couleurs. Celles tirant vers le blanc seront éclaircies et celles tirant vers le noir seront assombries.
-
 
 ## La compression d'images en couleur
 Pour finir ce chapitre sur la compression d'images par réduction de résolution, nous allons nous intéresser aux images en couleur. Le format utilisé est le PPM, ce dernier fonctionne comme le PBM et le PGM, la seule différence étant qu'il ne représente plus les couleurs des pixels par un nombre, mais par une combinaison de trois nombres.
@@ -691,7 +678,7 @@ class: with border
 Paysage de 4px*4px colorisé.
 ```
 
-Pour ce niveau de compression, l'image en nuance de gris permettait une meilleure reconnaissance de l'image. Cela peut paraître un peu contradictoire au premier abord, mais il y a bel est bien une logique derrière. La raison pour laquelle la version en nuance laissant encore apparaître ce détail est en soi contradictoire, c'est en fait le manque de nuance possible qui en est à l'origine. Le sommet de la montagne se serait, en effet, dissipé s'il y avait plus de nuances disponible. L'ajout de plusieurs millions de couleurs différentes permet de contrer ce problème, mais, paradoxalement, réduit la lecture de l'image à ce stade de compression.
+Pour ce niveau de compression, l'image en nuance de gris permettait une meilleure reconnaissance de l'image. Cela peut paraître un peu contradictoire au premier abord, mais il y a bel est bien une logique derrière. La raison pour laquelle la version en nuance laissant encore apparaître ce détail est en soi contradictoire, c'est en fait le manque de nuance possible qui en est à l'origine. Le sommet de la montagne se serait, en effet, dissipé s'il y avait plus de nuances disponibles. L'ajout de plusieurs millions de couleurs différentes permet de contrer ce problème, mais, paradoxalement, réduit la lecture de l'image à ce stade de compression.
 
 ```{figure} imgs/resolution/mountains/couleurs/2x2.png
 ---
